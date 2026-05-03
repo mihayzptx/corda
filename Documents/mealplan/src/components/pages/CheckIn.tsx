@@ -45,15 +45,7 @@ export function CheckInPage() {
     await db.weeklyCheckins.add(checkin);
 
     // Generate summary
-    const generatedSummary = AdaptiveEngine['generatePlainLanguageSummary' as any](
-      weekNumber,
-      workoutCompleted,
-      avgWeight || 0,
-      nutritionHits,
-      kneeAvg,
-      backAvg,
-      user
-    );
+    const generatedSummary = `Week ${weekNumber}:\n\n✓ You completed ${workoutCompleted} workouts. ${workoutCompleted >= 3 ? 'Great job staying consistent.' : workoutCompleted === 0 ? 'Consider getting back on track next week.' : 'Could aim for more sessions next week.'}\n\nCurrent weight: ${avgWeight} kg.\n\nProtein target hit ${nutritionHits} of 7 days. ${nutritionHits >= 5 ? 'Excellent nutrition adherence.' : nutritionHits >= 3 ? 'Good effort, keep tracking.' : 'Focus on hitting protein targets consistently.'}\n\nKnee condition: ${Math.round(kneeAvg)}/10. ${kneeAvg > 5 ? 'Monitor closely.' : 'Stable.'}\n\nLower back condition: ${Math.round(backAvg)}/10. ${backAvg > 5 ? 'Consider deload week.' : 'Stable.'}\n\nYou are on track for the next phase.`;
 
     setSummary(generatedSummary);
     setShowSummary(true);

@@ -75,7 +75,7 @@ export function ProgressPage() {
             <LineChart data={weightData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
               <XAxis dataKey="date" stroke="#a1a1aa" />
-              <YAxis stroke="#a1a1aa" domain="dataMin - 1" />
+              <YAxis stroke="#a1a1aa" domain={['dataMin - 1', 'dataMax + 1']} />
               <Tooltip
                 contentStyle={{ backgroundColor: '#18181b', border: '1px solid #3f3f46' }}
                 labelStyle={{ color: '#fafafa' }}

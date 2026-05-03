@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/db';
-import { useDailyLog, useFoods, calculateFoodMacros } from '@/hooks/useNutrition';
+import { useDailyLog, useFoods } from '@/hooks/useNutrition';
+import { calculateFoodMacros } from '@/lib/foodFetch';
 import { useUser } from '@/hooks/useUser';
 import { v4 as uuidv4 } from 'uuid';
 import type { DailyLog, Meal, FoodEntry, FoodItem } from '@/types';
@@ -119,8 +120,8 @@ export function NutritionLogger() {
     await saveLog(log);
   };
 
-  const currentMeal = meals[selectedMealIndex];
-  const currentMealMacros = calculateMealMacros(currentMeal);
+  const currentMeal = meals && meals[selectedMealIndex];
+  const currentMealMacros = currentMeal ? calculateMealMacros(currentMeal) : { kcal: 0, protein: 0, carbs: 0, fat: 0 };
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
@@ -216,6 +217,7 @@ export function NutritionLogger() {
         </div>
 
         {/* Current Meal */}
+        {currentMeal && (
         <div className="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
           <div className="mb-4">
             <h3 className="font-semibold mb-2">{currentMeal.name}</h3>
@@ -225,7 +227,7 @@ export function NutritionLogger() {
           </div>
 
           {/* Foods in meal */}
-          {currentMeal.foodEntries.length > 0 && (
+          {currentMeal && currentMeal.foodEntries && currentMeal.foodEntries.length > 0 && (
             <div className="space-y-2 mb-4 pb-4 border-b border-zinc-800">
               {currentMeal.foodEntries.map((entry, idx) => {
                 const food = foods.find((f) => f.id === entry.foodId);
@@ -266,6 +268,7 @@ export function NutritionLogger() {
             )}
           </div>
         </div>
+        )}
       </div>
 
       {/* Energy & Sleep */}

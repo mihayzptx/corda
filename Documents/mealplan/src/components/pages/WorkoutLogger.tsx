@@ -16,7 +16,7 @@ export function WorkoutLogger() {
   const [kneeDiscomfort, setKneeDiscomfort] = useState(5);
   const [backDiscomfort, setBackDiscomfort] = useState(5);
   const [energyLevel, setEnergyLevel] = useState(5);
-  const [status, setStatus] = useState<'in_progress' | 'completed'>('in_progress');
+  const [status, setStatus] = useState<'completed' | 'partial' | 'skipped'>('completed');
   const [notes, setNotes] = useState('');
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export function WorkoutLogger() {
     await db.workoutSessions.add(session);
     // Reset form
     setSessionSets([]);
-    setStatus('in_progress');
+    setStatus('completed');
     setNotes('');
     setKneeDiscomfort(5);
     setBackDiscomfort(5);
