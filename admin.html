@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORDA Admin — Blog Posts</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #060606;
+      --s1:      rgba(255,255,255,0.05);
+      --s2:      rgba(255,255,255,0.09);
+      --border:  rgba(255,255,255,0.12);
+      --text:    #FAF7F2;
+      --muted:   #7A756E;
+      --soft:    #B0A99F;
+      --gold:    #F5C842;
+      --gold2:   #FFD966;
+      --gold-bg: rgba(245,200,66,0.12);
+      --red:     #e05050;
+      --green:   #4caf7d;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; font-size: 14px; min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px;
+    }
+    .login-card {
+      background: var(--s1); border: 1px solid var(--border);
+      border-radius: 20px; padding: 48px; width: 100%; max-width: 400px;
+      text-align: center;
+    }
+    .login-logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .login-logo span { color: var(--gold); }
+    .login-sub { color: var(--muted); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 36px; }
+    .login-card input[type="password"] {
+      width: 100%; background: var(--s2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px; color: var(--text);
+      font-family: 'DM Mono', monospace; font-size: 14px; letter-spacing: 0.12em;
+      outline: none; margin-bottom: 14px; transition: border-color 0.2s;
+    }
+    .login-card input[type="password"]:focus { border-color: var(--gold); }
+    .login-error { color: var(--red); font-size: 12px; margin-bottom: 12px; min-height: 16px; }
+
+    /* ── ADMIN SHELL ── */
+    #admin-shell { display: none; }
+
+    .admin-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6,6,6,0.9); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 58px;
+    }
+    .admin-nav-logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 800; letter-spacing: 0.14em; }
+    .admin-nav-logo span { color: var(--gold); }
+    .admin-nav-logo em { color: rgba(255,255,255,0.3); font-style: normal; margin-left: 10px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; }
+    .admin-nav-actions { display: flex; gap: 10px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; border-radius: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: none; transition: opacity 0.2s, transform 0.15s; }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-gold { background: var(--gold); color: #080808; font-weight: 700; }
+    .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--soft); }
+    .btn-danger { background: transparent; border: 1px solid rgba(224,80,80,0.4); color: var(--red); }
+    .btn-sm { padding: 5px 12px; font-size: 10px; }
+
+    .admin-layout { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 58px); }
+
+    /* ── SIDEBAR ── */
+    .admin-sidebar {
+      border-right: 1px solid var(--border);
+      padding: 24px 0; background: rgba(255,255,255,0.015);
+    }
+    .sidebar-section-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); padding: 0 20px 10px;
+    }
+    .post-list { list-style: none; }
+    .post-item {
+      padding: 10px 20px; cursor: pointer; border-left: 2px solid transparent;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .post-item:hover { background: var(--s1); }
+    .post-item.active { background: var(--gold-bg); border-left-color: var(--gold); }
+    .post-item-title { font-size: 12px; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
+    .post-item-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); display: flex; gap: 8px; }
+    .post-item-tag { color: var(--gold); }
+    .post-item-draft { color: var(--red); }
+    .sidebar-new { padding: 16px 20px; border-top: 1px solid var(--border); margin-top: 16px; }
+
+    /* ── EDITOR ── */
+    .admin-main { padding: 32px 40px; max-width: 900px; }
+    .editor-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; color: var(--muted); text-align: center; gap: 16px; }
+    .editor-empty-icon { font-size: 48px; opacity: 0.3; }
+
+    .editor-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .field input, .field select, .field textarea {
+      background: var(--s1); border: 1px solid var(--border);
+      border-radius: 10px; padding: 11px 14px; color: var(--text);
+      font-family: 'Outfit', sans-serif; font-size: 14px; outline: none;
+      transition: border-color 0.2s; width: 100%;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: rgba(245,200,66,0.5); }
+    .field textarea { min-height: 120px; resize: vertical; line-height: 1.7; }
+    .field select option { background: #1a1a1a; }
+    .field-hint { font-size: 11px; color: var(--muted); }
+
+    .content-area { font-family: 'Outfit', sans-serif; font-size: 14px; min-height: 360px; line-height: 1.85; }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      padding: 10px 12px; background: var(--s1);
+      border: 1px solid var(--border); border-bottom: none;
+      border-radius: 10px 10px 0 0;
+    }
+    .toolbar-btn {
+      background: var(--s2); border: 1px solid var(--border);
+      color: var(--soft); border-radius: 6px; padding: 4px 10px;
+      font-family: 'DM Mono', monospace; font-size: 11px; cursor: pointer;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .toolbar-btn:hover { background: var(--gold-bg); color: var(--gold); border-color: rgba(245,200,66,0.3); }
+    .toolbar-sep { width: 1px; background: var(--border); margin: 0 4px; }
+    .content-wrap .field textarea {
+      border-radius: 0 0 10px 10px; border-top: none; min-height: 400px;
+      font-family: 'Outfit', sans-serif; font-size: 14px; line-height: 1.85;
+    }
+
+    .editor-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .editor-title-area { }
+    .editor-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; }
+    .editor-status { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    .status-draft { color: var(--red); }
+    .status-published { color: var(--green); }
+
+    .editor-actions { display: flex; gap: 10px; }
+
+    /* ── OUTPUT MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); z-index: 500;
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #0e0e0e; border: 1px solid var(--border); border-radius: 20px;
+      width: 100%; max-width: 760px; max-height: 90vh;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .modal-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 800; }
+    .modal-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; padding: 4px; line-height: 1; }
+    .modal-close:hover { color: var(--text); }
+    .modal-body { padding: 24px 28px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+    .output-block { background: var(--s1); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .output-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .output-block-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .output-code { padding: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--soft); overflow-x: auto; white-space: pre-wrap; word-break: break-all; max-height: 200px; overflow-y: auto; line-height: 1.7; }
+    .copy-btn { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--s2); border: 1px solid var(--border); color: var(--soft); padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+    .copy-btn:hover { color: var(--gold); border-color: rgba(245,200,66,0.3); }
+    .copy-btn.copied { color: var(--green); border-color: rgba(76,175,125,0.3); }
+    .instructions { font-size: 13px; color: var(--soft); line-height: 1.8; }
+    .instructions strong { color: var(--text); }
+    .step-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .step-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); background: var(--gold-bg); border-radius: 4px; padding: 2px 7px; flex-shrink: 0; margin-top: 2px; }
+    .modal-footer { padding: 16px 28px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; flex-shrink: 0; }
+
+    /* ── TOAST ── */
+    #toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: #1a1a1a; border: 1px solid var(--border); border-radius: 10px; padding: 11px 22px; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text); opacity: 0; transition: all 0.3s; z-index: 999; pointer-events: none; white-space: nowrap; }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #toast.success { border-color: rgba(76,175,125,0.4); color: var(--green); }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo"><span>COR</span>DA</div>
+    <div class="login-sub">Blog Admin</div>
+    <input type="password" id="pwd-input" placeholder="Enter password" autocomplete="current-password">
+    <div class="login-error" id="login-error"></div>
+    <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="checkPassword()">Enter</button>
+  </div>
+</div>
+
+<!-- ADMIN SHELL -->
+<div id="admin-shell">
+
+  <div class="admin-nav">
+    <div class="admin-nav-logo"><span>COR</span>DA <em>Admin</em></div>
+    <div class="admin-nav-actions">
+      <a href="blog.html" target="_blank" class="btn btn-ghost btn-sm">View blog ↗</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Log out</button>
+    </div>
+  </div>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <div class="admin-sidebar">
+      <div class="sidebar-section-label">Posts</div>
+      <ul class="post-list" id="post-list"></ul>
+      <div class="sidebar-new">
+        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="newPost()">+ New post</button>
+      </div>
+    </div>
+
+    <!-- MAIN EDITOR -->
+    <div class="admin-main" id="admin-main">
+      <div class="editor-empty" id="editor-empty">
+        <div class="editor-empty-icon">✦</div>
+        <div style="font-size:16px;color:var(--soft)">Select a post to edit or create a new one.</div>
+        <button class="btn btn-gold" onclick="newPost()">+ New post</button>
+      </div>
+
+      <div id="editor-panel" style="display:none">
+        <div class="editor-header">
+          <div class="editor-title-area">
+            <div class="editor-title" id="editor-heading">New post</div>
+            <div class="editor-status" id="editor-status"></div>
+          </div>
+          <div class="editor-actions">
+            <button class="btn btn-danger btn-sm" onclick="deletePost()">Delete</button>
+            <button class="btn btn-ghost btn-sm" onclick="saveDraft()">Save draft</button>
+            <button class="btn btn-gold btn-sm" onclick="generateOutput()">Generate files ↓</button>
+          </div>
+        </div>
+
+        <div class="editor-form">
+          <div class="field">
+            <label>Title</label>
+            <input type="text" id="f-title" placeholder="You do not have an AI problem. You have a workflow problem." oninput="onTitleChange()">
+          </div>
+
+          <div class="form-row-3">
+            <div class="field">
+              <label>Tag / Category</label>
+              <select id="f-tag">
+                <option value="AI">AI Integration</option>
+                <option value="Process">Process</option>
+                <option value="Product">Product Strategy</option>
+                <option value="Leadership">Technical Leadership</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Publish date</label>
+              <input type="date" id="f-date">
+            </div>
+            <div class="field">
+              <label>Read time (min)</label>
+              <input type="number" id="f-readtime" value="5" min="1" max="60">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Excerpt (shown on blog card)</label>
+            <textarea id="f-excerpt" style="min-height:80px" placeholder="One or two sentences that make someone want to read the full article."></textarea>
+          </div>
+
+          <div class="field">
+            <label>SEO description (meta tag — under 160 chars)</label>
+            <input type="text" id="f-seo" placeholder="Short version for Google search snippets.">
+            <div class="field-hint" id="seo-count">0 / 160</div>
+          </div>
+
+          <div class="field">
+            <label>Article subtitle</label>
+            <input type="text" id="f-subtitle" placeholder="One sentence shown under the title on the article page.">
+          </div>
+
+          <div class="content-wrap">
+            <div class="toolbar" id="toolbar">
+              <button class="toolbar-btn" onclick="ins('h2')">H2</button>
+              <button class="toolbar-btn" onclick="ins('h3')">H3</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="ins('p')">Paragraph</button>
+              <button class="toolbar-btn" onclick="ins('ul')">List</button>
+              <button class="toolbar-btn" onclick="ins('li')">List item</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="ins('bold')"><b>B</b></button>
+              <button class="toolbar-btn" onclick="ins('pullquote')">Pullquote</button>
+              <div class="toolbar-sep"></div>
+              <button class="toolbar-btn" onclick="ins('toc')">TOC stub</button>
+              <button class="toolbar-btn" onclick="ins('related')">Related links</button>
+            </div>
+            <div class="field content-wrap" style="margin-top:0">
+              <textarea id="f-content" class="content-area" placeholder="Write your article content here in HTML. Use the toolbar buttons to insert common elements quickly.&#10;&#10;Example:&#10;&lt;h2&gt;Section heading&lt;/h2&gt;&#10;&lt;p&gt;Your paragraph text here.&lt;/p&gt;"></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Related articles (slugs, comma-separated)</label>
+            <input type="text" id="f-related" placeholder="article-llm-production, article-ai-trust, article-healthcare-ai">
+            <div class="field-hint">Filenames without .html — used for the sidebar "Related reading" links</div>
+          </div>
+
+          <div class="field">
+            <label>CTA headline on article page</label>
+            <input type="text" id="f-cta-head" placeholder="Start with the workflow." value="Start with the workflow.">
+          </div>
+          <div class="field">
+            <label>CTA subtext</label>
+            <input type="text" id="f-cta-sub" placeholder="Our AI Integration engagements begin with a paid discovery sprint." value="Our engagements begin with a paid discovery sprint. You leave with a ranked list of opportunities regardless of what comes next.">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OUTPUT MODAL -->
+<div class="modal-overlay" id="output-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Generated files</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="instructions">
+        <strong>Two things to add to your project:</strong>
+        <ol class="step-list">
+          <li><span class="step-num">01</span><span>Copy the article file content below and save as the filename shown.</span></li>
+          <li><span class="step-num">02</span><span>Copy the blog card snippet and paste it at the top of the <code style="color:var(--gold)">&lt;div class="blog-grid"&gt;</code> block in <strong>blog.html</strong>.</span></li>
+          <li><span class="step-num">03</span><span>Add the filename to <strong>sitemap.xml</strong> following the same pattern.</span></li>
+          <li><span class="step-num">04</span><span>Redeploy on Vercel — drag the updated folder, or push to Git.</span></li>
+        </ol>
+      </div>
+
+      <div class="output-block">
+        <div class="output-block-header">
+          <span class="output-block-label" id="out-filename">article-new.html</span>
+          <div style="display:flex;gap:8px">
+            <button class="copy-btn" onclick="downloadFile()">⬇ Download file</button>
+            <button class="copy-btn" id="copy-article-btn" onclick="copyText('article-out', 'copy-article-btn')">Copy HTML</button>
+          </div>
+        </div>
+        <div class="output-code" id="article-out"></div>
+      </div>
+
+      <div class="output-block">
+        <div class="output-block-header">
+          <span class="output-block-label">Blog card — paste into blog.html</span>
+          <button class="copy-btn" id="copy-card-btn" onclick="copyText('card-out', 'copy-card-btn')">Copy snippet</button>
+        </div>
+        <div class="output-code" id="card-out"></div>
+      </div>
+
+      <div class="output-block">
+        <div class="output-block-header">
+          <span class="output-block-label">Sitemap entry — paste into sitemap.xml</span>
+          <button class="copy-btn" id="copy-sitemap-btn" onclick="copyText('sitemap-out', 'copy-sitemap-btn')">Copy snippet</button>
+        </div>
+        <div class="output-code" id="sitemap-out"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────
+const ADMIN_PASSWORD = 'corda2025';  // Change this before deploying
+const STORAGE_KEY = 'corda_blog_posts';
+
+// ── STATE ──────────────────────────────────────────────────────
+let posts = [];
+let currentId = null;
+
+// ── AUTH ───────────────────────────────────────────────────────
+function checkPassword() {
+  const val = document.getElementById('pwd-input').value;
+  if (val === ADMIN_PASSWORD) {
+    sessionStorage.setItem('corda_auth', '1');
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-shell').style.display = 'block';
+    loadPosts();
+  } else {
+    document.getElementById('login-error').textContent = 'Incorrect password.';
+    document.getElementById('pwd-input').value = '';
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('corda_auth');
+  location.reload();
+}
+
+document.getElementById('pwd-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkPassword();
+});
+
+// Auto-login if session active
+if (sessionStorage.getItem('corda_auth') === '1') {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('admin-shell').style.display = 'block';
+}
+
+// ── STORAGE ────────────────────────────────────────────────────
+function savePosts() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+}
+
+function loadPosts() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  posts = raw ? JSON.parse(raw) : [];
+  renderSidebar();
+}
+
+// ── SIDEBAR ────────────────────────────────────────────────────
+function renderSidebar() {
+  const list = document.getElementById('post-list');
+  if (posts.length === 0) {
+    list.innerHTML = '<li style="padding:12px 20px;color:var(--muted);font-size:12px;">No posts yet.</li>';
+    return;
+  }
+  list.innerHTML = posts.map(p => `
+    <li class="post-item ${p.id === currentId ? 'active' : ''}" onclick="openPost('${p.id}')">
+      <div class="post-item-title">${p.title || 'Untitled'}</div>
+      <div class="post-item-meta">
+        <span class="post-item-tag">${p.tag || 'AI'}</span>
+        <span>${p.date || ''}</span>
+        <span class="${p.status === 'published' ? '' : 'post-item-draft'}">${p.status === 'published' ? 'Published' : 'Draft'}</span>
+      </div>
+    </li>`).join('');
+}
+
+// ── POST CRUD ──────────────────────────────────────────────────
+function uid() { return 'post_' + Date.now(); }
+
+function newPost() {
+  const today = new Date().toISOString().split('T')[0];
+  const p = {
+    id: uid(), title: '', tag: 'AI', date: today, readtime: 5,
+    excerpt: '', seo: '', subtitle: '', content: '', related: '',
+    ctaHead: 'Start with the right problem.', ctaSub: 'Our engagements begin with a paid discovery sprint. You leave with a clear scope regardless of what comes next.',
+    status: 'draft'
+  };
+  posts.unshift(p);
+  savePosts();
+  openPost(p.id);
+}
+
+function openPost(id) {
+  currentId = id;
+  const p = posts.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('editor-empty').style.display = 'none';
+  document.getElementById('editor-panel').style.display = 'block';
+  document.getElementById('editor-heading').textContent = p.title || 'Untitled';
+  document.getElementById('editor-status').textContent = p.status === 'published' ? '● Published' : '○ Draft';
+  document.getElementById('editor-status').className = 'editor-status ' + (p.status === 'published' ? 'status-published' : 'status-draft');
+  document.getElementById('f-title').value = p.title || '';
+  document.getElementById('f-tag').value = p.tag || 'AI';
+  document.getElementById('f-date').value = p.date || '';
+  document.getElementById('f-readtime').value = p.readtime || 5;
+  document.getElementById('f-excerpt').value = p.excerpt || '';
+  document.getElementById('f-seo').value = p.seo || '';
+  document.getElementById('f-subtitle').value = p.subtitle || '';
+  document.getElementById('f-content').value = p.content || '';
+  document.getElementById('f-related').value = p.related || '';
+  document.getElementById('f-cta-head').value = p.ctaHead || '';
+  document.getElementById('f-cta-sub').value = p.ctaSub || '';
+  updateSeoCount();
+  renderSidebar();
+}
+
+function collectForm() {
+  return {
+    title: document.getElementById('f-title').value.trim(),
+    tag: document.getElementById('f-tag').value,
+    date: document.getElementById('f-date').value,
+    readtime: document.getElementById('f-readtime').value,
+    excerpt: document.getElementById('f-excerpt').value.trim(),
+    seo: document.getElementById('f-seo').value.trim(),
+    subtitle: document.getElementById('f-subtitle').value.trim(),
+    content: document.getElementById('f-content').value,
+    related: document.getElementById('f-related').value.trim(),
+    ctaHead: document.getElementById('f-cta-head').value.trim(),
+    ctaSub: document.getElementById('f-cta-sub').value.trim(),
+  };
+}
+
+function saveDraft() {
+  if (!currentId) return;
+  const idx = posts.findIndex(x => x.id === currentId);
+  if (idx === -1) return;
+  Object.assign(posts[idx], collectForm(), { status: 'draft' });
+  savePosts();
+  renderSidebar();
+  toast('Draft saved');
+}
+
+function deletePost() {
+  if (!currentId) return;
+  if (!confirm('Delete this post? This cannot be undone.')) return;
+  posts = posts.filter(x => x.id !== currentId);
+  currentId = null;
+  savePosts();
+  document.getElementById('editor-empty').style.display = '';
+  document.getElementById('editor-panel').style.display = 'none';
+  renderSidebar();
+  toast('Post deleted');
+}
+
+function onTitleChange() {
+  const title = document.getElementById('f-title').value;
+  document.getElementById('editor-heading').textContent = title || 'Untitled';
+}
+
+// ── SEO COUNTER ────────────────────────────────────────────────
+document.getElementById('f-seo').addEventListener('input', updateSeoCount);
+function updateSeoCount() {
+  const len = document.getElementById('f-seo').value.length;
+  const el = document.getElementById('seo-count');
+  el.textContent = `${len} / 160`;
+  el.style.color = len > 160 ? 'var(--red)' : 'var(--muted)';
+}
+
+// ── TOOLBAR ───────────────────────────────────────────────────
+function ins(type) {
+  const ta = document.getElementById('f-content');
+  const start = ta.selectionStart, end = ta.selectionEnd;
+  const sel = ta.value.substring(start, end);
+  const snippets = {
+    h2: `\n<h2>${sel || 'Section heading'}</h2>\n`,
+    h3: `\n<h3>${sel || 'Subheading'}</h3>\n`,
+    p:  `\n<p>${sel || 'Your paragraph here.'}</p>\n`,
+    ul: `\n<ul>\n  <li>First item</li>\n  <li>Second item</li>\n  <li>Third item</li>\n</ul>\n`,
+    li: `\n  <li>${sel || 'List item'}</li>`,
+    bold: `<strong>${sel || 'bold text'}</strong>`,
+    pullquote: `\n<div class="art-pullquote"><p>${sel || 'Key quote or insight here.'}</p></div>\n`,
+    toc: `\n    <div class="art-toc">\n      <div class="art-toc-label">In this article</div>\n      <a href="#" onclick="return false">Section one</a>\n      <a href="#" onclick="return false">Section two</a>\n      <a href="#" onclick="return false">Section three</a>\n    </div>`,
+    related: `\n    <div class="art-related">\n      <div class="art-related-label">Related reading</div>\n      <a class="art-rel-link" href="article-slug.html">Article title here</a>\n      <a class="art-rel-link" href="article-slug.html">Article title here</a>\n    </div>`
+  };
+  const snippet = snippets[type] || '';
+  ta.value = ta.value.substring(0, start) + snippet + ta.value.substring(end);
+  ta.focus();
+  ta.selectionStart = ta.selectionEnd = start + snippet.length;
+}
+
+// ── SLUG ──────────────────────────────────────────────────────
+function toSlug(title) {
+  return 'article-' + title.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim().replace(/\s+/g, '-')
+    .replace(/-+/g, '-').substring(0, 50);
+}
+
+// ── RELATED LINKS HTML ─────────────────────────────────────────
+function relatedLinksHtml(related) {
+  if (!related) return '';
+  const links = related.split(',').map(s => s.trim()).filter(Boolean);
+  if (!links.length) return '';
+  const items = links.map(slug => {
+    const niceName = slug.replace('article-', '').replace(/-/g, ' ');
+    return `      <a class="art-rel-link" href="${slug}.html">${niceName}</a>`;
+  }).join('\n');
+  return `    <div class="art-related">\n      <div class="art-related-label">Related reading</div>\n${items}\n    </div>`;
+}
+
+// ── TAG LABEL ─────────────────────────────────────────────────
+function tagLabel(tag) {
+  const map = { AI: 'AI Integration', Process: 'Process', Product: 'Product Strategy', Leadership: 'Technical Leadership' };
+  return map[tag] || tag;
+}
+
+// ── FORMAT DATE ───────────────────────────────────────────────
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+// ── GENERATE HTML ─────────────────────────────────────────────
+function buildArticleHTML(p, slug) {
+  const relatedHtml = relatedLinksHtml(p.related);
+  const tagFull = tagLabel(p.tag);
+  const dateStr = formatDate(p.date);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="${(p.seo || p.excerpt).replace(/"/g, '&quot;')}">
+  <title>${p.title.replace(/"/g, '&quot;')} — CORDA</title>
+  <link rel="canonical" href="https://corda.digital/${slug}.html">
+  <meta property="og:title" content="${p.title.replace(/"/g, '&quot;')}">
+  <meta property="og:description" content="${(p.seo || p.excerpt).replace(/"/g, '&quot;')}">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"${p.title.replace(/"/g, '\\"')}","datePublished":"${p.date}","author":{"@type":"Organization","name":"CORDA Studio"},"publisher":{"@type":"Organization","name":"CORDA Studio","url":"https://corda.digital"}}<\/script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logomark" href="index.html">
+    <span class="logo-cor">COR</span><span class="logo-sep"></span><span class="logo-da">DA</span>
+  </a>
+  <div class="nav-pills">
+    <a class="nav-pill" href="services.html">Services</a>
+    <a class="nav-pill" href="industries.html">Industries</a>
+    <a class="nav-pill" href="technology.html">Technology</a>
+    <a class="nav-pill" href="cases.html">Cases</a>
+    <a class="nav-pill" href="index.html#approach">Approach</a>
+    <a class="nav-pill" href="blog.html" style="color:var(--text)">Blog</a>
+  </div>
+  <a class="nav-cta" href="index.html#contact">Talk to us</a>
+</nav>
+
+<a class="art-back" href="blog.html">&#8592; Back to blog</a>
+
+<div class="article-hero">
+  <div class="mesh m1" style="top:-80px;right:-100px;width:500px;height:500px;opacity:0.6;"></div>
+  <div class="art-meta">
+    <span class="blog-tag">${tagFull}</span>
+    <span class="art-sep">/</span>
+    <span class="art-date">${dateStr}</span>
+    <span class="art-sep">/</span>
+    <span class="art-read-time">${p.readtime} min read</span>
+  </div>
+  <h1 class="art-title reveal">${p.title}</h1>
+  <p class="art-sub reveal" style="transition-delay:0.08s">${p.subtitle || p.excerpt}</p>
+</div>
+
+<div class="article-body">
+  <div class="article-content reveal">
+
+${p.content}
+
+  </div>
+
+  <aside class="article-sidebar reveal" style="transition-delay:0.1s">
+${relatedHtml || `    <div class="art-toc">
+      <div class="art-toc-label">In this article</div>
+    </div>`}
+    <a class="btn-main" href="services.html" style="display:block;text-align:center;margin-top:12px;">See our services</a>
+  </aside>
+</div>
+
+<div class="cta-band reveal">
+  <div class="ctab-glow"></div>
+  <div class="ctab-pre">Next step</div>
+  <h2 class="ctab-title"><span class="gi">${p.ctaHead}</span></h2>
+  <p class="ctab-sub">${p.ctaSub}</p>
+  <div class="ctab-btns">
+    <a class="btn-main" href="index.html#contact">Start a conversation</a>
+    <a class="btn-ghost" href="blog.html">More articles &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-brand">
+    <div class="f-logo"><span class="f-cor">COR</span><span class="f-sep"></span><span class="f-da">DA</span></div>
+    <span class="f-tagline">Find the core. Build around it.</span>
+  </div>
+  <span class="f-copy">&copy; 2025 Corda Studio. Houston, TX.</span>
+</footer>
+
+<script src="js/main.js"><\/script>
+</body>
+</html>`;
+}
+
+function buildCardHTML(p, slug) {
+  const tagFull = tagLabel(p.tag);
+  const dateStr = formatDate(p.date);
+  return `    <a class="blog-card reveal" href="${slug}.html" data-tag="${p.tag}">
+      <div class="blog-card-top">
+        <div class="blog-date">${dateStr}</div>
+        <span class="blog-tag">${tagFull}</span>
+        <div class="blog-title">${p.title}</div>
+        <p class="blog-excerpt">${p.excerpt}</p>
+      </div>
+      <div class="blog-card-footer">
+        <div class="blog-read">Read &#8594;</div>
+        <div class="blog-read-time">${p.readtime} min</div>
+      </div>
+    </a>`;
+}
+
+function buildSitemapEntry(slug) {
+  return `  <url><loc>https://corda.digital/${slug}.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>`;
+}
+
+// ── GENERATE OUTPUT ───────────────────────────────────────────
+function generateOutput() {
+  if (!currentId) return;
+  const idx = posts.findIndex(x => x.id === currentId);
+  if (idx === -1) return;
+
+  // Save first
+  Object.assign(posts[idx], collectForm(), { status: 'published' });
+  savePosts();
+  renderSidebar();
+
+  const p = posts[idx];
+  if (!p.title) { toast('Add a title first'); return; }
+
+  const slug = toSlug(p.title);
+  const articleHTML = buildArticleHTML(p, slug);
+  const cardHTML = buildCardHTML(p, slug);
+  const sitemapEntry = buildSitemapEntry(slug);
+
+  document.getElementById('out-filename').textContent = slug + '.html';
+  document.getElementById('article-out').textContent = articleHTML;
+  document.getElementById('card-out').textContent = cardHTML;
+  document.getElementById('sitemap-out').textContent = sitemapEntry;
+
+  // Store for download
+  window._lastArticleHTML = articleHTML;
+  window._lastSlug = slug;
+
+  document.getElementById('output-modal').classList.add('open');
+  document.getElementById('editor-status').textContent = '● Published';
+  document.getElementById('editor-status').className = 'editor-status status-published';
+}
+
+// ── DOWNLOAD ──────────────────────────────────────────────────
+function downloadFile() {
+  if (!window._lastArticleHTML) return;
+  const blob = new Blob([window._lastArticleHTML], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = window._lastSlug + '.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('File downloaded');
+}
+
+// ── COPY ──────────────────────────────────────────────────────
+function copyText(elId, btnId) {
+  const text = document.getElementById(elId).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById(btnId);
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = elId === 'article-out' ? 'Copy HTML' : 'Copy snippet'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function closeModal() { document.getElementById('output-modal').classList.remove('open'); }
+
+// ── TOAST ─────────────────────────────────────────────────────
+function toast(msg, type = '') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'show ' + (type === 'success' ? 'success' : '');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => el.className = '', 2500);
+}
+
+// ── INIT ──────────────────────────────────────────────────────
+if (sessionStorage.getItem('corda_auth') === '1') loadPosts();
+</script>
+</body>
+</html>

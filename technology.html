@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology — CORDA Studio | How We Choose What to Build With</title>
+  <meta name="description" content="How CORDA selects technology for client engagements. Pragmatic stack choices, AI infrastructure decisions, and why we default to the boring option more often than you'd expect.">
+  <link rel="canonical" href="https://corda.digital/technology.html">
+  <meta property="og:title" content="Technology — CORDA Studio">
+  <meta property="og:description" content="How we choose stacks, tools, and AI infrastructure for client projects. Pragmatic over trendy — every time.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logomark" href="index.html">
+    <span class="logo-cor">COR</span><span class="logo-sep"></span><span class="logo-da">DA</span>
+  </a>
+  <div class="nav-pills">
+    <a class="nav-pill" href="services.html">Services</a>
+    <a class="nav-pill" href="industries.html">Industries</a>
+    <a class="nav-pill" href="technology.html" style="color:var(--text)">Technology</a>
+    <a class="nav-pill" href="cases.html">Cases</a>
+    <a class="nav-pill" href="blog.html">Blog</a>
+  </div>
+  <a class="nav-cta" href="index.html#contact">Talk to us</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <span>Technology</span>
+</div>
+
+<div class="page-hero">
+  <div class="mesh m1" style="top:-60px;right:-80px;width:600px;height:600px;"></div>
+  <div class="ph-pre">How we build</div>
+  <h1 class="ph-title reveal">The most important<br>technology decision is <span class="gi">almost never<br>about the technology.</span></h1>
+  <p class="ph-sub reveal" style="transition-delay:0.1s">We choose stacks based on three things: what solves the problem most reliably, what your team can actually maintain, and what gets you to production fastest without creating debt you will spend two years paying back. Trendy is not a selection criterion.</p>
+  <div class="ph-meta reveal" style="transition-delay:0.18s">
+    <div class="ph-stat"><span class="ph-stat-val">0</span><span class="ph-stat-lbl">Vendor lock-in agreements</span></div>
+    <div class="ph-stat"><span class="ph-stat-val">3</span><span class="ph-stat-lbl">Questions every stack decision answers</span></div>
+    <div class="ph-stat"><span class="ph-stat-val">100%</span><span class="ph-stat-lbl">Ownership stays with the client</span></div>
+  </div>
+</div>
+
+<!-- HOW WE CHOOSE -->
+<section class="section">
+  <div class="s-pre">The decision framework</div>
+  <div class="svc-header reveal">
+    <h2 class="s-head">Three questions before<br>every stack <span class="gi">choice.</span></h2>
+    <p class="svc-note">We ask the same three questions for every technology decision: Does it solve the problem? Can your team maintain it after we leave? Does it create a dependency that will hurt you in 18 months? Answers to those three questions eliminate 90% of the options.</p>
+  </div>
+
+  <div class="tech-stack-grid reveal" style="transition-delay:0.1s">
+
+    <div class="ts-card">
+      <div class="ts-num">Web Applications</div>
+      <div class="ts-title">The full-stack choices we use in production.</div>
+      <p class="ts-body">For most client web applications, the stack is React or Next.js on the frontend, Node.js or Python on the backend, and Postgres as the primary datastore. These are not glamorous choices. They are the choices that have the deepest talent pools, the most mature tooling, and the longest track records in production environments that look like yours.</p>
+      <p class="ts-body">We do not use a framework just because it was announced at a conference last quarter. We evaluate new tools constantly but add them to client projects only when they solve a specific problem that existing tools do not handle well.</p>
+      <div class="ts-tools">
+        <span class="ts-tool">React</span>
+        <span class="ts-tool">Next.js</span>
+        <span class="ts-tool">Node.js</span>
+        <span class="ts-tool">Python / FastAPI</span>
+        <span class="ts-tool">PostgreSQL</span>
+        <span class="ts-tool">TypeScript</span>
+        <span class="ts-tool">Tailwind</span>
+        <span class="ts-tool">Prisma</span>
+      </div>
+      <div class="ts-glow"></div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-num">Mobile</div>
+      <div class="ts-title">Cross-platform first. Native when the use case demands it.</div>
+      <p class="ts-body">React Native is the default for mobile work. It reduces build time, lets you share logic with your web codebase, and produces apps that perform well for the vast majority of use cases. We have shipped React Native applications to field technicians running Android devices in low-connectivity environments, to healthcare workers in clinical settings, and to consumer-facing products with 50K+ users.</p>
+      <p class="ts-body">We move to native Swift or Kotlin when the performance requirements, platform-specific integrations, or UX fidelity requirements genuinely justify the added complexity. That happens less often than most clients expect.</p>
+      <div class="ts-tools">
+        <span class="ts-tool">React Native</span>
+        <span class="ts-tool">Expo</span>
+        <span class="ts-tool">Swift (when warranted)</span>
+        <span class="ts-tool">Kotlin (when warranted)</span>
+      </div>
+      <div class="ts-glow"></div>
+    </div>
+
+    <div class="ts-card full">
+      <div class="ts-num">AI Infrastructure</div>
+      <div class="ts-title">The stack behind AI systems that actually run in production.</div>
+      <p class="ts-body">Most AI projects fail at the infrastructure layer, not the model layer. Choosing the right model is the easy part. Building a system that handles variable inputs reliably, stays within cost budgets, produces auditable outputs, and keeps your team's trust over time — that is where the real work is.</p>
+
+      <div class="ai-pipeline">
+        <div class="aip-node highlight">
+          <div class="aip-label">Input</div>
+          <div class="aip-val">Structured intake</div>
+        </div>
+        <div class="aip-arrow">→</div>
+        <div class="aip-node">
+          <div class="aip-label">Pre-process</div>
+          <div class="aip-val">Validation + clean</div>
+        </div>
+        <div class="aip-arrow">→</div>
+        <div class="aip-node highlight">
+          <div class="aip-label">LLM / Model</div>
+          <div class="aip-val">GPT-4o / Claude</div>
+        </div>
+        <div class="aip-arrow">→</div>
+        <div class="aip-node">
+          <div class="aip-label">Post-process</div>
+          <div class="aip-val">Guardrails + audit</div>
+        </div>
+        <div class="aip-arrow">→</div>
+        <div class="aip-node highlight">
+          <div class="aip-label">Output</div>
+          <div class="aip-val">Explainable result</div>
+        </div>
+        <div class="aip-arrow">→</div>
+        <div class="aip-node">
+          <div class="aip-label">Monitoring</div>
+          <div class="aip-val">Drift + cost tracking</div>
+        </div>
+      </div>
+
+      <p class="ts-body">Every AI system we build includes an explanation layer — the system shows the user why it produced a given output, not just what the output is. This is not optional for us. User trust is fragile and adoption without trust is useless. We also build cost monitoring into every LLM integration from day one, because unconstrained token usage at scale will surprise you.</p>
+      <div class="ts-tools">
+        <span class="ts-tool">OpenAI GPT-4o</span>
+        <span class="ts-tool">Anthropic Claude</span>
+        <span class="ts-tool">LangChain / LlamaIndex</span>
+        <span class="ts-tool">Pinecone / pgvector</span>
+        <span class="ts-tool">Whisper (audio)</span>
+        <span class="ts-tool">Guardrails AI</span>
+        <span class="ts-tool">Helicone (monitoring)</span>
+        <span class="ts-tool">OpenAI Embeddings</span>
+      </div>
+      <div class="ts-glow"></div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-num">Infrastructure &amp; Deployment</div>
+      <div class="ts-title">Deployed, not demoed. From day one.</div>
+      <p class="ts-body">We use managed infrastructure wherever it does not compromise the client's control or create problematic vendor dependency. Vercel and Railway for most web applications. AWS or GCP when compliance requirements, data residency, or scale demands more control. Docker and Terraform for anything that needs to be portable. CI/CD from the first day of the build — not added as an afterthought before handoff.</p>
+      <div class="ts-tools">
+        <span class="ts-tool">Vercel</span>
+        <span class="ts-tool">Railway</span>
+        <span class="ts-tool">AWS (ECS, RDS, S3)</span>
+        <span class="ts-tool">GCP</span>
+        <span class="ts-tool">Docker</span>
+        <span class="ts-tool">Terraform</span>
+        <span class="ts-tool">GitHub Actions</span>
+        <span class="ts-tool">Supabase</span>
+      </div>
+      <div class="ts-glow"></div>
+    </div>
+
+    <div class="ts-card">
+      <div class="ts-num">Compliance-Sensitive Industries</div>
+      <div class="ts-title">HIPAA, SOC 2, and financial data — handled correctly from the start.</div>
+      <p class="ts-body">Retrofitting compliance is expensive. We design for it upfront. For healthcare clients, that means BAA-signed vendors, appropriate PHI handling, audit logging, and access controls built into the data model from the first migration. For financial services, that means segregated data environments, encryption at rest and in transit, and a documented approach to third-party data sharing that survives due diligence.</p>
+      <p class="ts-body">We have signed BAAs, completed vendor security questionnaires, and participated in technical due diligence processes across multiple engagements. We know what investors and auditors look for and we build toward those standards from the start.</p>
+      <div class="ts-tools">
+        <span class="ts-tool">HIPAA BAA process</span>
+        <span class="ts-tool">SOC 2 readiness</span>
+        <span class="ts-tool">Encryption at rest/transit</span>
+        <span class="ts-tool">Audit logging</span>
+        <span class="ts-tool">RBAC</span>
+        <span class="ts-tool">PII segregation</span>
+      </div>
+      <div class="ts-glow"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DECISION TABLE -->
+<section class="section alt">
+  <div class="s-pre">How we decide</div>
+  <div class="svc-header reveal">
+    <h2 class="s-head">What we build with.<br>What we <span class="gi">avoid and why.</span></h2>
+    <p class="svc-note">The fastest way to understand our technology philosophy is to see the decisions we make and the reasoning behind them.</p>
+  </div>
+  <div class="reveal" style="overflow-x:auto;transition-delay:0.1s">
+    <table class="decision-table">
+      <thead>
+        <tr>
+          <th>Decision</th>
+          <th>What we do</th>
+          <th>What we avoid</th>
+          <th>Why it matters for your business</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Architecture at early stage</td>
+          <td class="yes">Well-structured monolith</td>
+          <td class="no">Microservices</td>
+          <td>Microservices solve a scaling problem most early-stage products do not have yet. They add enormous operational overhead that slows shipping. You can always split a monolith; you cannot easily un-split a distributed system.</td>
+        </tr>
+        <tr>
+          <td>AI model selection</td>
+          <td class="yes">GPT-4o or Claude 3.5 depending on task</td>
+          <td class="no">Fine-tuning as a first step</td>
+          <td>Fine-tuning is expensive, slow, and often unnecessary. Prompt engineering and RAG solve 90% of what clients think they need fine-tuning for, in a fraction of the time and cost. We start with the simplest approach that works.</td>
+        </tr>
+        <tr>
+          <td>Database choice</td>
+          <td class="yes">PostgreSQL as default</td>
+          <td class="no">NoSQL by default</td>
+          <td>Postgres handles relational and document data, has excellent JSON support, and the ecosystem is deep. NoSQL databases are the right call for specific access patterns — not the default choice because it sounds more scalable.</td>
+        </tr>
+        <tr>
+          <td>Third-party integrations</td>
+          <td class="yes">Official APIs, BAA-signed vendors</td>
+          <td class="no">Screen-scraping, unofficial APIs</td>
+          <td>Unofficial integrations break without warning, expose you to terms-of-service violations, and create technical debt that is painful to unwind. We never build on a foundation that the provider can revoke.</td>
+        </tr>
+        <tr>
+          <td>AI output handling</td>
+          <td class="yes">Explainable outputs with audit trails</td>
+          <td class="no">Black-box confidence scores</td>
+          <td>Your team needs to understand why the AI produced a result in order to trust it. Trust is the adoption problem. Systems that show reasoning get used; systems that show a percentage score get ignored.</td>
+        </tr>
+        <tr>
+          <td>Frontend framework</td>
+          <td class="yes">React / Next.js</td>
+          <td class="no">New framework per project</td>
+          <td>Switching frontend frameworks per engagement creates knowledge silos and hiring difficulty. We standardize on React because it has the deepest talent pool, best tooling, and the best path to handing off a codebase your team can actually maintain.</td>
+        </tr>
+        <tr>
+          <td>CI/CD setup</td>
+          <td class="yes">From day one of the build</td>
+          <td class="no">Added pre-handoff</td>
+          <td>A CI/CD pipeline added at the end of a project is a CI/CD pipeline nobody trusts. We set it up before the first merge. By handoff day, it has been running for weeks and your team understands it.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHAT WE DO NOT DO -->
+<section class="section">
+  <div class="s-pre">Honest about limits</div>
+  <div class="approach-grid">
+    <div class="app-left reveal">
+      <h2 class="s-head">What we do not<br>build, and <span class="gi">why we tell you.</span></h2>
+      <p style="font-size:14px;color:var(--soft);line-height:1.85;margin-bottom:20px;">There are categories of work we decline, not because we cannot technically do them, but because the client is better served by a different kind of partner. Knowing this before you contact us saves time for both of us.</p>
+      <a class="btn-ghost" href="index.html#contact" style="display:inline-block;">Start with a conversation &#8594;</a>
+    </div>
+    <div class="app-points reveal" style="transition-delay:0.1s">
+      <div class="apoint"><div class="ap-dot"></div><div><div class="ap-title">Enterprise platform implementations</div><div class="ap-body">Salesforce customization, SAP modules, large ERP rollouts. These require dedicated specialists and long implementation timelines. We are not the right fit for this category and will tell you so immediately.</div></div></div>
+      <div class="apoint"><div class="ap-dot"></div><div><div class="ap-title">Consumer social products and marketplaces</div><div class="ap-body">Two-sided marketplace dynamics and consumer social products need different expertise in growth, viral loops, and content moderation. We build business software and B2B products. That is what we are good at.</div></div></div>
+      <div class="apoint"><div class="ap-dot"></div><div><div class="ap-title">Staff augmentation</div><div class="ap-body">We do not fill seats on existing teams as contractors. Our value is in the thinking that happens before the build. If you have a team and need bodies, we will recommend firms that do that well. We do not.</div></div></div>
+      <div class="apoint"><div class="ap-dot"></div><div><div class="ap-title">Work where we cannot influence the approach</div><div class="ap-body">If the scope, stack, and architecture are fully defined before we arrive, we cannot add the value we are hired for. We need to be in the room when the foundational decisions get made.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <div class="ctab-glow"></div>
+  <div class="ctab-pre">Work with us</div>
+  <h2 class="ctab-title">A problem worth solving<br>deserves the <span class="gi">right tools.</span></h2>
+  <p class="ctab-sub">Tell us what you are building and the problem it needs to solve. We will tell you what we would build it with and why.</p>
+  <div class="ctab-btns">
+    <a class="btn-main" href="index.html#contact">Start a conversation</a>
+    <a class="btn-ghost" href="cases.html">See what we have built &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-brand">
+    <div class="f-logo"><span class="f-cor">COR</span><span class="f-sep"></span><span class="f-da">DA</span></div>
+    <span class="f-tagline">Find the core. Build around it.</span>
+  </div>
+  <span class="f-copy">&copy; 2025 Corda Studio. Houston, TX.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

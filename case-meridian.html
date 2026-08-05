@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How CORDA built an AI-assisted triage and intake system that cut patient intake time by 64% without a platform migration.">
+  <title>Regional Urgent Care Network — CORDA Case Study</title>
+  <link rel="canonical" href="https://corda.digital/case-meridian.html">
+  <meta property="og:title" content="Regional Urgent Care Network — CORDA Case Study">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logomark" href="index.html">
+    <span class="logo-cor">COR</span><span class="logo-sep"></span><span class="logo-da">DA</span>
+  </a>
+  <div class="nav-pills">
+    <a class="nav-pill" href="services.html">Services</a>
+    <a class="nav-pill" href="industries.html">Industries</a>
+    <a class="nav-pill" href="cases.html" style="color:var(--text)">Cases</a>
+    <a class="nav-pill" href="index.html#approach">Approach</a>
+    <a class="nav-pill" href="blog.html">Blog</a>
+  </div>
+  <a class="nav-cta" href="index.html#contact">Talk to us</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="cases.html">Cases</a>
+  <span>›</span>
+  <span>Meridian Health</span>
+</div>
+
+<div class="case-hero">
+  <div class="mesh m2" style="top:-80px;right:-100px;width:700px;height:700px;"></div>
+  <div class="ch-meta-row">
+    <span class="ch-tag gold">AI Integration</span>
+    <span class="ch-tag">Healthcare</span>
+    <span class="ch-tag">Patient Operations</span>
+    <span class="ch-tag">2024</span>
+  </div>
+  <h1 class="ch-title reveal">Regional Urgent Care Network: 64% faster intake. No migration required.</h1>
+  <p class="ch-sub reveal" style="transition-delay:0.08s">A regional urgent care network was losing patients to wait times and inconsistent triage. We built an AI-assisted intake and routing system that plugged into their existing EHR. Nine weeks, no platform migration, measurable outcomes from week one of go-live.</p>
+  <div class="ch-stats reveal" style="transition-delay:0.14s">
+    <div class="ch-stat">
+      <div class="ch-stat-val">64%</div>
+      <div class="ch-stat-lbl">Intake time cut</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">9wk</div>
+      <div class="ch-stat-lbl">Delivery timeline</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">0</div>
+      <div class="ch-stat-lbl">Platform migration</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">4</div>
+      <div class="ch-stat-lbl">Clinic locations</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+  <div class="case-main reveal">
+
+    <h2>The situation</h2>
+    <p>The client operated four urgent care clinics across the Houston metro. Their front-desk intake process was bottlenecked and inconsistent: patients filled out paper forms or typed into a generic intake portal, a front-desk staff member reviewed the responses and made a judgment call about triage priority, and clinical staff often disagreed with those calls after the fact.</p>
+    <p>The average intake-to-room time across all four locations was 23 minutes. For walk-in urgent care, that number alone was driving patients to competitors. The operations director had looked at three different patient management platforms and rejected all of them because each would have required replacing their existing EHR — a full migration estimated at 18 months and $400K.</p>
+    <p>The ask: fix the intake problem without touching the EHR.</p>
+
+    <h2>The constraint that shaped everything</h2>
+    <p>The network used athenahealth for their EHR. The system was deeply embedded — billing, clinical notes, prescriptions, compliance reporting all lived there. Replacing it was not a real option for a four-location independent network. Whatever we built had to read and write to athenahealth through its API, stay inside HIPAA boundaries, and feel like a native part of the front-desk workflow rather than a separate tool the staff had to remember to use.</p>
+    <p>We spent the first week on-site at two locations watching intake happen in real time. What we observed: front-desk staff were making triage calls based on incomplete information, chief complaint descriptions were inconsistently recorded, and the downstream clinical team had no visibility into what was coming before a patient reached the exam room.</p>
+
+    <h2>What we built</h2>
+    <p>The system had three components. First, a patient-facing intake flow — a structured symptom and history collection screen that replaced the generic form. It asked the right follow-up questions based on the chief complaint and flagged anything that clinical guidelines suggested warranted immediate attention. It ran on a tablet at the front desk and on patients' phones via a QR code in the waiting area.</p>
+    <p>Second, an AI-assisted triage scoring layer. Based on the structured intake data, the system produced a triage recommendation — not a clinical decision, but a structured input to the clinical team's decision. It surfaced relevant history from the EHR, highlighted anything that had changed since the patient's last visit, and formatted everything in the way Meridian's clinical leads had told us they actually wanted to see it.</p>
+    <p>Third, a real-time queue view for clinical staff — a read-only screen showing every patient currently in intake, their triage score, and estimated acuity. This meant the clinical team could see what was coming before a patient left the waiting room.</p>
+
+    <div class="case-pullquote">
+      <div class="cpq-text">"Our nurses stopped arguing with the front desk about triage calls within the first week. The system gave everyone the same information at the same time."</div>
+      <div class="cpq-attr">Director of Clinical Operations</div>
+    </div>
+
+    <h2>HIPAA and the trust problem</h2>
+    <p>Healthcare AI has a credibility problem. Staff are correctly skeptical of systems that make recommendations they cannot explain. We addressed this directly by designing the triage score to always show its reasoning — not a black-box confidence number, but a plain-language summary of which intake responses contributed to the score and why.</p>
+    <p>The clinical leads reviewed and signed off on the scoring logic before go-live. That review process took two weeks and was worth every hour. It meant that on day one of live deployment, the clinical staff already trusted the system because they had been part of building it.</p>
+
+    <h2>Outcome</h2>
+    <p>Average intake-to-room time dropped from 23 minutes to 8.3 minutes across all four locations within the first 30 days of operation. Triage disagreements between front-desk and clinical staff — tracked as incident reports — dropped by 87% in the same period. Patient satisfaction scores across all four locations improved in the following quarter's survey.</p>
+    <p>The network has since extended the engagement to build a follow-up care coordination module that notifies patients with outstanding lab results and routes them to the appropriate follow-on care. No additional platform migration required.</p>
+
+  </div>
+
+  <aside class="case-sidebar reveal" style="transition-delay:0.1s">
+    <div class="cs-block">
+      <div class="csb-label">Engagement details</div>
+      <div class="csb-row"><span class="csb-key">Track</span><span class="csb-val gold">AI Integration</span></div>
+      <div class="csb-row"><span class="csb-key">Industry</span><span class="csb-val">Healthcare</span></div>
+      <div class="csb-row"><span class="csb-key">Timeline</span><span class="csb-val">9 weeks</span></div>
+      <div class="csb-row"><span class="csb-key">Structure</span><span class="csb-val">Fixed price</span></div>
+      <div class="csb-row"><span class="csb-key">Locations</span><span class="csb-val">4 clinics</span></div>
+    </div>
+    <div class="cs-block">
+      <div class="csb-label">Stack</div>
+      <div class="csb-row"><span class="csb-key">Frontend</span><span class="csb-val">React / PWA</span></div>
+      <div class="csb-row"><span class="csb-key">AI layer</span><span class="csb-val">OpenAI + custom rules</span></div>
+      <div class="csb-row"><span class="csb-key">EHR</span><span class="csb-val">athenahealth API</span></div>
+      <div class="csb-row"><span class="csb-key">Compliance</span><span class="csb-val">HIPAA BAA signed</span></div>
+    </div>
+    <div class="cs-block">
+      <div class="csb-label">Key outcomes</div>
+      <div class="csb-row"><span class="csb-key">Intake time</span><span class="csb-val gold">23min → 8.3min</span></div>
+      <div class="csb-row"><span class="csb-key">Triage disputes</span><span class="csb-val">Down 87%</span></div>
+      <div class="csb-row"><span class="csb-key">Follow-on work</span><span class="csb-val">Yes — Phase 2</span></div>
+    </div>
+    <a class="btn-main" href="services.html" style="display:block;text-align:center;margin-top:8px;">Learn about AI Integration</a>
+  </aside>
+</div>
+
+<div class="case-next reveal">
+  <div>
+    <div class="cn-label">Next case</div>
+    <div class="cn-title">Cornerstone Capital: Technical leadership pre-seed to Series A.</div>
+  </div>
+  <a class="cn-link" href="case-cornerstone.html">Read the case &#8594;</a>
+</div>
+
+<footer>
+  <div class="f-brand">
+    <div class="f-logo"><span class="f-cor">COR</span><span class="f-sep"></span><span class="f-da">DA</span></div>
+    <span class="f-tagline">Find the core. Build around it.</span>
+  </div>
+  <span class="f-copy">&copy; 2025 Corda Studio. Houston, TX.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How CORDA co-built a field ops SaaS — a field ops SaaS for an oilfield services operator — from zero to first revenue in 58 days.">
+  <title>West Texas Field Services Operator — CORDA Case Study</title>
+  <link rel="canonical" href="https://corda.digital/case-fieldstate.html">
+  <meta property="og:title" content="West Texas Field Services Operator — CORDA Case Study">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="logomark" href="index.html">
+    <span class="logo-cor">COR</span><span class="logo-sep"></span><span class="logo-da">DA</span>
+  </a>
+  <div class="nav-pills">
+    <a class="nav-pill" href="services.html">Services</a>
+    <a class="nav-pill" href="industries.html">Industries</a>
+    <a class="nav-pill" href="cases.html" style="color:var(--text)">Cases</a>
+    <a class="nav-pill" href="index.html#approach">Approach</a>
+    <a class="nav-pill" href="blog.html">Blog</a>
+  </div>
+  <a class="nav-cta" href="index.html#contact">Talk to us</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="cases.html">Cases</a>
+  <span>›</span>
+  <span>Fieldstate</span>
+</div>
+
+<div class="case-hero">
+  <div class="mesh m1" style="top:-80px;right:-100px;width:700px;height:700px;"></div>
+  <div class="ch-meta-row">
+    <span class="ch-tag gold">Embedded Engineer</span>
+    <span class="ch-tag">Energy</span>
+    <span class="ch-tag">Field Operations</span>
+    <span class="ch-tag">2024</span>
+  </div>
+  <h1 class="ch-title reveal">West Texas Field Services Operator: Zero to first revenue in 58 days.</h1>
+  <p class="ch-sub reveal" style="transition-delay:0.08s">An independent oilfield services operator had deep domain expertise, a recurring workflow problem, and no path to building software. We co-built a field ops SaaS on a monthly retainer arrangement. No upfront development fee. First paying customer before handoff.</p>
+  <div class="ch-stats reveal" style="transition-delay:0.14s">
+    <div class="ch-stat">
+      <div class="ch-stat-val">58d</div>
+      <div class="ch-stat-lbl">To first revenue</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">3x</div>
+      <div class="ch-stat-lbl">Crew capacity</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">$0</div>
+      <div class="ch-stat-lbl">Upfront dev cost</div>
+    </div>
+    <div class="ch-stat">
+      <div class="ch-stat-val">1</div>
+      <div class="ch-stat-lbl">Paying customer at launch</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+  <div class="case-main reveal">
+
+    <h2>The situation</h2>
+    <p>The client ran a small but well-regarded oilfield services operation in West Texas. They had fifteen field technicians, a solid reputation with two or three anchor clients, and a dispatch process that ran entirely on phone calls, group texts, and a shared Google spreadsheet that was always out of date.</p>
+    <p>The founder had watched two competitors implement off-the-shelf field service management software and fail to get adoption. The tools were built for HVAC companies and landscaping crews. They did not understand wellsite logistics, crew certification requirements, or the informal communication patterns that field technicians actually used.</p>
+    <p>He wanted to build something specific. Something his crews would actually use. He had the domain knowledge and the relationships. He did not have a development team, a technical co-founder, or the capital to pay standard agency rates for a custom build.</p>
+
+    <h2>What we did differently</h2>
+    <p>We structured the engagement as a embedded engineer. No upfront development fee. In exchange, we negotiated a percentage of monthly recurring revenue for a defined period, with a buyout clause at the founder's option.</p>
+    <p>That structure changed the dynamic immediately. We were not contractors executing a spec. We were embedded in the team, attending their standups, making decisions with them — not for them. Every technical choice was made with adoption in mind. What would a field technician actually open on a phone with one bar of LTE on a dusty wellsite at 6am.</p>
+    <p>Discovery took one week. We spent three days on-site in Midland — riding along for dispatch calls, watching how work orders got assigned, understanding which parts of the process caused the most friction. We also interviewed two of the anchor clients to understand what they actually needed to see from a subcontractor's software.</p>
+
+    <div class="case-pullquote">
+      <div class="cpq-text">"They spent more time understanding how we actually worked than any vendor I have ever talked to. By the time they started building, they already understood the job."</div>
+      <div class="cpq-attr">Founder, West Texas field services operator</div>
+    </div>
+
+    <h2>The build</h2>
+    <p>We scoped a lean MVP: work order creation and assignment, crew availability and certification tracking, GPS check-in at site, and a simple client-facing portal showing real-time job status. Everything the anchor clients had said they wanted to see from a subcontractor, made visible without any manual reporting.</p>
+    <p>We built on React Native for the crew-facing mobile app — the one that had to work on cheap Android phones in low-connectivity conditions. The dispatcher web app was Next.js. The client portal was a read-only view into the same data layer, behind a simple login.</p>
+    <p>We shipped a working demo at day 22. By day 40 we had the founder's primary anchor client using the portal in staging. The formal handoff happened at day 58, with one signed paying customer already on the platform.</p>
+
+    <h2>What the founder got right</h2>
+    <p>The product worked because the founder stayed in the process. He reviewed every screen. He pushed back when something felt wrong for how field technicians actually behaved. He introduced us to his best crews and let us run usability sessions during slow shifts.</p>
+    <p>The operators who succeed with embedded engineers are the ones who understand that the domain expertise is the product. We built the software. He built the thing that made the software worth building.</p>
+
+    <h2>Outcome</h2>
+    <p>The platform launched with one anchor client and twelve active crews. Within six months, the operator had tripled their active crew capacity without a proportional increase in dispatch headcount — the platform was doing the coordination work that used to require three people on the phone. Two additional client companies had signed on to the portal. The founder exercised the buyout clause at month eleven.</p>
+
+  </div>
+
+  <aside class="case-sidebar reveal" style="transition-delay:0.1s">
+    <div class="cs-block">
+      <div class="csb-label">Engagement details</div>
+      <div class="csb-row"><span class="csb-key">Track</span><span class="csb-val gold">Embedded Engineer</span></div>
+      <div class="csb-row"><span class="csb-key">Industry</span><span class="csb-val">Energy</span></div>
+      <div class="csb-row"><span class="csb-key">Timeline</span><span class="csb-val">58 days</span></div>
+      <div class="csb-row"><span class="csb-key">Structure</span><span class="csb-val">Revenue share</span></div>
+      <div class="csb-row"><span class="csb-key">Exit</span><span class="csb-val">Founder buyout</span></div>
+    </div>
+    <div class="cs-block">
+      <div class="csb-label">Stack</div>
+      <div class="csb-row"><span class="csb-key">Mobile</span><span class="csb-val">React Native</span></div>
+      <div class="csb-row"><span class="csb-key">Web app</span><span class="csb-val">Next.js</span></div>
+      <div class="csb-row"><span class="csb-key">Database</span><span class="csb-val">Postgres / Supabase</span></div>
+      <div class="csb-row"><span class="csb-key">Hosting</span><span class="csb-val">Vercel + Railway</span></div>
+    </div>
+    <div class="cs-block">
+      <div class="csb-label">Key outcomes</div>
+      <div class="csb-row"><span class="csb-key">Revenue day</span><span class="csb-val gold">Day 58</span></div>
+      <div class="csb-row"><span class="csb-key">Crew capacity</span><span class="csb-val">3x in 6 months</span></div>
+      <div class="csb-row"><span class="csb-key">Client portal users</span><span class="csb-val">3 companies</span></div>
+    </div>
+    <a class="btn-main" href="services.html#embedded" style="display:block;text-align:center;margin-top:8px;">Learn about Embedded Engineer</a>
+  </aside>
+</div>
+
+<div class="case-next reveal">
+  <div>
+    <div class="cn-label">Next case</div>
+    <div class="cn-title">Meridian Health: Triage automation for urgent care.</div>
+  </div>
+  <a class="cn-link" href="case-meridian.html">Read the case &#8594;</a>
+</div>
+
+<footer>
+  <div class="f-brand">
+    <div class="f-logo"><span class="f-cor">COR</span><span class="f-sep"></span><span class="f-da">DA</span></div>
+    <span class="f-tagline">Find the core. Build around it.</span>
+  </div>
+  <span class="f-copy">&copy; 2025 Corda Studio. Houston, TX.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
