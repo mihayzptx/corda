@@ -1,0 +1,218 @@
+- generic [active] [ref=f10e1]:
+  - navigation [ref=f10e2]:
+    - link "COR DA" [ref=f10e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f10e4]: COR
+      - generic [ref=f10e6]: DA
+    - generic [ref=f10e7]:
+      - link "Services" [ref=f10e8] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=f10e9] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=f10e10] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=f10e11] [cursor=pointer]:
+        - /url: cases.html
+      - link "Blog" [ref=f10e12] [cursor=pointer]:
+        - /url: blog.html
+    - link "Talk to us" [ref=f10e13] [cursor=pointer]:
+      - /url: index.html#contact
+  - generic [ref=f10e14]:
+    - link "Home" [ref=f10e15] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=f10e16]: ›
+    - generic [ref=f10e17]: Technology
+  - generic [ref=f10e18]:
+    - generic [ref=f10e19]: How we build
+    - heading [level=1] [ref=f10e20]:
+      - text: The most importanttechnology decision is
+      - generic [ref=f10e21]: almost neverabout the technology.
+    - paragraph [ref=f10e22]: "We choose stacks based on three things: what solves the problem most reliably, what your team can actually maintain, and what gets you to production fastest without creating debt you will spend two years paying back. Trendy is not a selection criterion."
+    - generic [ref=f10e23]:
+      - generic [ref=f10e24]:
+        - generic [ref=f10e25]: "0"
+        - generic [ref=f10e26]: Vendor lock-in agreements
+      - generic [ref=f10e27]:
+        - generic [ref=f10e28]: "3"
+        - generic [ref=f10e29]: Questions every stack decision answers
+      - generic [ref=f10e30]:
+        - generic [ref=f10e31]: 100%
+        - generic [ref=f10e32]: Ownership stays with the client
+  - generic [ref=f10e33]:
+    - generic [ref=f10e34]: The decision framework
+    - generic [ref=f10e35]:
+      - heading "Three questions before every stack choice." [level=2] [ref=f10e36]: Three questions beforeevery stack choice.
+      - paragraph [ref=f10e37]: "We ask the same three questions for every technology decision: Does it solve the problem? Can your team maintain it after we leave? Does it create a dependency that will hurt you in 18 months? Answers to those three questions eliminate 90% of the options."
+    - generic [ref=f10e38]:
+      - generic [ref=f10e39]:
+        - generic [ref=f10e40]: Web Applications
+        - generic [ref=f10e41]: The full-stack choices we use in production.
+        - paragraph [ref=f10e42]: For most client web applications, the stack is React or Next.js on the frontend, Node.js or Python on the backend, and Postgres as the primary datastore. These are not glamorous choices. They are the choices that have the deepest talent pools, the most mature tooling, and the longest track records in production environments that look like yours.
+        - paragraph [ref=f10e43]: We do not use a framework just because it was announced at a conference last quarter. We evaluate new tools constantly but add them to client projects only when they solve a specific problem that existing tools do not handle well.
+        - generic [ref=f10e44]:
+          - generic [ref=f10e45]: React
+          - generic [ref=f10e46]: Next.js
+          - generic [ref=f10e47]: Node.js
+          - generic [ref=f10e48]: Python / FastAPI
+          - generic [ref=f10e49]: PostgreSQL
+          - generic [ref=f10e50]: TypeScript
+          - generic [ref=f10e51]: Tailwind
+          - generic [ref=f10e52]: Prisma
+      - generic [ref=f10e53]:
+        - generic [ref=f10e54]: Mobile
+        - generic [ref=f10e55]: Cross-platform first. Native when the use case demands it.
+        - paragraph [ref=f10e56]: React Native is the default for mobile work. It reduces build time, lets you share logic with your web codebase, and produces apps that perform well for the vast majority of use cases. We have shipped React Native applications to field technicians running Android devices in low-connectivity environments, to healthcare workers in clinical settings, and to consumer-facing products with 50K+ users.
+        - paragraph [ref=f10e57]: We move to native Swift or Kotlin when the performance requirements, platform-specific integrations, or UX fidelity requirements genuinely justify the added complexity. That happens less often than most clients expect.
+        - generic [ref=f10e58]:
+          - generic [ref=f10e59]: React Native
+          - generic [ref=f10e60]: Expo
+          - generic [ref=f10e61]: Swift (when warranted)
+          - generic [ref=f10e62]: Kotlin (when warranted)
+      - generic [ref=f10e63]:
+        - generic [ref=f10e64]: AI Infrastructure
+        - generic [ref=f10e65]: The stack behind AI systems that actually run in production.
+        - paragraph [ref=f10e66]: Most AI projects fail at the infrastructure layer, not the model layer. Choosing the right model is the easy part. Building a system that handles variable inputs reliably, stays within cost budgets, produces auditable outputs, and keeps your team's trust over time — that is where the real work is.
+        - generic [ref=f10e67]:
+          - generic [ref=f10e68]:
+            - generic [ref=f10e69]: Input
+            - generic [ref=f10e70]: Structured intake
+          - generic [ref=f10e71]: →
+          - generic [ref=f10e72]:
+            - generic [ref=f10e73]: Pre-process
+            - generic [ref=f10e74]: Validation + clean
+          - generic [ref=f10e75]: →
+          - generic [ref=f10e76]:
+            - generic [ref=f10e77]: LLM / Model
+            - generic [ref=f10e78]: GPT-4o / Claude
+          - generic [ref=f10e79]: →
+          - generic [ref=f10e80]:
+            - generic [ref=f10e81]: Post-process
+            - generic [ref=f10e82]: Guardrails + audit
+          - generic [ref=f10e83]: →
+          - generic [ref=f10e84]:
+            - generic [ref=f10e85]: Output
+            - generic [ref=f10e86]: Explainable result
+          - generic [ref=f10e87]: →
+          - generic [ref=f10e88]:
+            - generic [ref=f10e89]: Monitoring
+            - generic [ref=f10e90]: Drift + cost tracking
+        - paragraph [ref=f10e91]: Every AI system we build includes an explanation layer — the system shows the user why it produced a given output, not just what the output is. This is not optional for us. User trust is fragile and adoption without trust is useless. We also build cost monitoring into every LLM integration from day one, because unconstrained token usage at scale will surprise you.
+        - generic [ref=f10e92]:
+          - generic [ref=f10e93]: OpenAI GPT-4o
+          - generic [ref=f10e94]: Anthropic Claude
+          - generic [ref=f10e95]: LangChain / LlamaIndex
+          - generic [ref=f10e96]: Pinecone / pgvector
+          - generic [ref=f10e97]: Whisper (audio)
+          - generic [ref=f10e98]: Guardrails AI
+          - generic [ref=f10e99]: Helicone (monitoring)
+          - generic [ref=f10e100]: OpenAI Embeddings
+      - generic [ref=f10e101]:
+        - generic [ref=f10e102]: Infrastructure & Deployment
+        - generic [ref=f10e103]: Deployed, not demoed. From day one.
+        - paragraph [ref=f10e104]: We use managed infrastructure wherever it does not compromise the client's control or create problematic vendor dependency. Vercel and Railway for most web applications. AWS or GCP when compliance requirements, data residency, or scale demands more control. Docker and Terraform for anything that needs to be portable. CI/CD from the first day of the build — not added as an afterthought before handoff.
+        - generic [ref=f10e105]:
+          - generic [ref=f10e106]: Vercel
+          - generic [ref=f10e107]: Railway
+          - generic [ref=f10e108]: AWS (ECS, RDS, S3)
+          - generic [ref=f10e109]: GCP
+          - generic [ref=f10e110]: Docker
+          - generic [ref=f10e111]: Terraform
+          - generic [ref=f10e112]: GitHub Actions
+          - generic [ref=f10e113]: Supabase
+      - generic [ref=f10e114]:
+        - generic [ref=f10e115]: Compliance-Sensitive Industries
+        - generic [ref=f10e116]: HIPAA, SOC 2, and financial data — handled correctly from the start.
+        - paragraph [ref=f10e117]: Retrofitting compliance is expensive. We design for it upfront. For healthcare clients, that means BAA-signed vendors, appropriate PHI handling, audit logging, and access controls built into the data model from the first migration. For financial services, that means segregated data environments, encryption at rest and in transit, and a documented approach to third-party data sharing that survives due diligence.
+        - paragraph [ref=f10e118]: We have signed BAAs, completed vendor security questionnaires, and participated in technical due diligence processes across multiple engagements. We know what investors and auditors look for and we build toward those standards from the start.
+        - generic [ref=f10e119]:
+          - generic [ref=f10e120]: HIPAA BAA process
+          - generic [ref=f10e121]: SOC 2 readiness
+          - generic [ref=f10e122]: Encryption at rest/transit
+          - generic [ref=f10e123]: Audit logging
+          - generic [ref=f10e124]: RBAC
+          - generic [ref=f10e125]: PII segregation
+  - generic [ref=f10e126]:
+    - generic [ref=f10e127]: How we decide
+    - generic [ref=f10e128]:
+      - heading "What we build with. What we avoid and why." [level=2] [ref=f10e129]: What we build with.What we avoid and why.
+      - paragraph [ref=f10e130]: The fastest way to understand our technology philosophy is to see the decisions we make and the reasoning behind them.
+    - table [ref=f10e132]:
+      - rowgroup [ref=f10e133]:
+        - row [ref=f10e134]:
+          - columnheader "Decision" [ref=f10e135]
+          - columnheader "What we do" [ref=f10e136]
+          - columnheader "What we avoid" [ref=f10e137]
+          - columnheader "Why it matters for your business" [ref=f10e138]
+      - rowgroup [ref=f10e139]:
+        - row [ref=f10e140]:
+          - cell "Architecture at early stage" [ref=f10e141]
+          - cell "Well-structured monolith" [ref=f10e142]
+          - cell "Microservices" [ref=f10e143]
+          - cell "Microservices solve a scaling problem most early-stage products do not have yet. They add enormous operational overhead that slows shipping. You can always split a monolith; you cannot easily un-split a distributed system." [ref=f10e144]
+        - row [ref=f10e145]:
+          - cell "AI model selection" [ref=f10e146]
+          - cell "GPT-4o or Claude 3.5 depending on task" [ref=f10e147]
+          - cell "Fine-tuning as a first step" [ref=f10e148]
+          - cell "Fine-tuning is expensive, slow, and often unnecessary. Prompt engineering and RAG solve 90% of what clients think they need fine-tuning for, in a fraction of the time and cost. We start with the simplest approach that works." [ref=f10e149]
+        - row [ref=f10e150]:
+          - cell "Database choice" [ref=f10e151]
+          - cell "PostgreSQL as default" [ref=f10e152]
+          - cell "NoSQL by default" [ref=f10e153]
+          - cell "Postgres handles relational and document data, has excellent JSON support, and the ecosystem is deep. NoSQL databases are the right call for specific access patterns — not the default choice because it sounds more scalable." [ref=f10e154]
+        - row [ref=f10e155]:
+          - cell "Third-party integrations" [ref=f10e156]
+          - cell "Official APIs, BAA-signed vendors" [ref=f10e157]
+          - cell "Screen-scraping, unofficial APIs" [ref=f10e158]
+          - cell "Unofficial integrations break without warning, expose you to terms-of-service violations, and create technical debt that is painful to unwind. We never build on a foundation that the provider can revoke." [ref=f10e159]
+        - row [ref=f10e160]:
+          - cell "AI output handling" [ref=f10e161]
+          - cell "Explainable outputs with audit trails" [ref=f10e162]
+          - cell "Black-box confidence scores" [ref=f10e163]
+          - cell "Your team needs to understand why the AI produced a result in order to trust it. Trust is the adoption problem. Systems that show reasoning get used; systems that show a percentage score get ignored." [ref=f10e164]
+        - row [ref=f10e165]:
+          - cell "Frontend framework" [ref=f10e166]
+          - cell "React / Next.js" [ref=f10e167]
+          - cell "New framework per project" [ref=f10e168]
+          - cell "Switching frontend frameworks per engagement creates knowledge silos and hiring difficulty. We standardize on React because it has the deepest talent pool, best tooling, and the best path to handing off a codebase your team can actually maintain." [ref=f10e169]
+        - row [ref=f10e170]:
+          - cell "CI/CD setup" [ref=f10e171]
+          - cell "From day one of the build" [ref=f10e172]
+          - cell "Added pre-handoff" [ref=f10e173]
+          - cell "A CI/CD pipeline added at the end of a project is a CI/CD pipeline nobody trusts. We set it up before the first merge. By handoff day, it has been running for weeks and your team understands it." [ref=f10e174]
+  - generic [ref=f10e175]:
+    - generic [ref=f10e176]: Honest about limits
+    - generic [ref=f10e177]:
+      - generic [ref=f10e178]:
+        - heading "What we do not build, and why we tell you." [level=2] [ref=f10e179]: What we do notbuild, and why we tell you.
+        - paragraph [ref=f10e180]: There are categories of work we decline, not because we cannot technically do them, but because the client is better served by a different kind of partner. Knowing this before you contact us saves time for both of us.
+        - link "Start with a conversation →" [ref=f10e181] [cursor=pointer]:
+          - /url: index.html#contact
+      - generic [ref=f10e182]:
+        - generic [ref=f10e185]:
+          - generic [ref=f10e186]: Enterprise platform implementations
+          - generic [ref=f10e187]: Salesforce customization, SAP modules, large ERP rollouts. These require dedicated specialists and long implementation timelines. We are not the right fit for this category and will tell you so immediately.
+        - generic [ref=f10e190]:
+          - generic [ref=f10e191]: Consumer social products and marketplaces
+          - generic [ref=f10e192]: Two-sided marketplace dynamics and consumer social products need different expertise in growth, viral loops, and content moderation. We build business software and B2B products. That is what we are good at.
+        - generic [ref=f10e195]:
+          - generic [ref=f10e196]: Staff augmentation
+          - generic [ref=f10e197]: We do not fill seats on existing teams as contractors. Our value is in the thinking that happens before the build. If you have a team and need bodies, we will recommend firms that do that well. We do not.
+        - generic [ref=f10e200]:
+          - generic [ref=f10e201]: Work where we cannot influence the approach
+          - generic [ref=f10e202]: If the scope, stack, and architecture are fully defined before we arrive, we cannot add the value we are hired for. We need to be in the room when the foundational decisions get made.
+  - generic [ref=f10e203]:
+    - generic [ref=f10e204]: Work with us
+    - heading "A problem worth solving deserves the right tools." [level=2] [ref=f10e205]: A problem worth solvingdeserves the right tools.
+    - paragraph [ref=f10e206]: Tell us what you are building and the problem it needs to solve. We will tell you what we would build it with and why.
+    - generic [ref=f10e207]:
+      - link "Start a conversation" [ref=f10e208] [cursor=pointer]:
+        - /url: index.html#contact
+      - link "See what we have built →" [ref=f10e209] [cursor=pointer]:
+        - /url: cases.html
+  - contentinfo [ref=f10e210]:
+    - generic [ref=f10e211]:
+      - generic [ref=f10e212]:
+        - generic [ref=f10e213]: COR
+        - generic [ref=f10e215]: DA
+      - generic [ref=f10e216]: Find the core. Build around it.
+    - generic [ref=f10e217]: © 2025 Corda Studio. Houston, TX.

@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "COR DA" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e4]: COR
+      - generic [ref=e6]: DA
+    - generic [ref=e7]:
+      - link "Services" [ref=e8] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=e9] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=e10] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=e11] [cursor=pointer]:
+        - /url: cases.html
+      - link "Approach" [ref=e12] [cursor=pointer]:
+        - /url: index.html#approach
+      - link "Blog" [ref=e13] [cursor=pointer]:
+        - /url: blog.html
+    - link "Talk to us" [ref=e14] [cursor=pointer]:
+      - /url: index.html#contact
+  - generic [ref=e15]: Home
+  - generic [ref=e17]:
+    - generic [ref=e18]: Boutique software studio
+    - heading "Stop burning budget on software nobody asked for." [level=1] [ref=e19]: Stop burning budget onsoftware nobody asked for.
+    - paragraph [ref=e20]: Most software projects fail before a line gets written. The wrong problem gets scoped, the wrong thing gets built, and six months later nobody is using it. CORDA fixes that. Strategy first. Senior engineers throughout. Working software in 60 days.
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: <8
+        - generic [ref=e24]: Clients at once
+      - generic [ref=e25]:
+        - generic [ref=e26]: 2 wk
+        - generic [ref=e27]: Intro to written proposal
+      - generic [ref=e28]:
+        - generic [ref=e29]: 60d
+        - generic [ref=e30]: First working build
+      - generic [ref=e31]:
+        - generic [ref=e32]: "0"
+        - generic [ref=e33]: Middlemen
+    - generic [ref=e34]:
+      - link "Tell us your problem" [ref=e35] [cursor=pointer]:
+        - /url: "#contact"
+      - link "See how we work →" [ref=e36] [cursor=pointer]:
+        - /url: cases.html
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]: Max active clients
+      - generic [ref=e41]: <0
+      - generic [ref=e42]: A deliberate ceiling. Fewer clients means your project gets real attention, not a slot in a shared queue.
+    - generic [ref=e43]:
+      - generic [ref=e44]: Intro call to written proposal
+      - generic [ref=e45]: 0 wk
+      - generic [ref=e46]: You know exactly what you are buying and what it costs before any build begins. No open-ended agreements to start.
+    - generic [ref=e47]:
+      - generic [ref=e48]: First working build in production
+      - generic [ref=e49]: 0d
+      - generic [ref=e50]: Deployed software, used by real users. Not a prototype or a staging environment nobody has reviewed.
+    - generic [ref=e51]:
+      - generic [ref=e52]: Management layers between you and the engineers
+      - generic [ref=e53]: "0"
+      - generic [ref=e54]: Direct access. No account manager translating requirements. No "I'll check with the team."
+    - generic [ref=e55]:
+      - generic [ref=e56]: What the first 10 weeks look like
+      - generic [ref=e57]:
+        - generic [ref=e60]:
+          - generic [ref=e61]: Week 1 — Diagnosis, not pitch
+          - generic [ref=e62]: 30-minute call. We ask about the problem, the business context, and what has already been tried. We tell you honestly whether we are the right fit. No deck.
+        - generic [ref=e65]:
+          - generic [ref=e66]: Weeks 2–3 — Paid discovery
+          - generic [ref=e67]: Structured sessions produce a scope document, technical plan, build-vs-buy analysis, and a fixed-price proposal. You own the deliverables regardless of what comes next.
+        - generic [ref=e70]:
+          - generic [ref=e71]: Weeks 4–8 — Build with full visibility
+          - generic [ref=e72]: Weekly demos, direct Slack access to engineers, milestone check-ins against agreed scope. No surprises. No hidden change orders.
+        - generic [ref=e75]:
+          - generic [ref=e76]: Week 10 — Ship, hand off, and move on
+          - generic [ref=e77]: Working software in production with clean documentation and a knowledge-transfer session. Optional 90-day post-launch support retainer.
+    - generic [ref=e78]:
+      - generic [ref=e79]: What poor scoping costs — typical $300K software project
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]: Rework from unclear scope
+          - generic [ref=e84]: ~$216K
+        - generic [ref=e85]:
+          - generic [ref=e86]: Delay cost (6 months of market time)
+          - generic [ref=e88]: ~$165K
+        - generic [ref=e89]:
+          - generic [ref=e90]: Cost of a Discovery sprint
+          - generic [ref=e92]: ~$15K
+      - generic [ref=e93]: Discovery is not overhead. It is the highest-ROI line in any software budget.
+  - generic [ref=e94]:
+    - generic [ref=e95]: Services
+    - generic [ref=e96]:
+      - heading "Four tracks. One standard." [level=2] [ref=e97]: Four tracks.One standard.
+      - paragraph [ref=e98]: Each track is designed for a specific situation. If you are not sure which fits, start with Discovery. Deliverables are yours regardless of what comes next.
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]: "01"
+        - generic [ref=e102]:
+          - generic [ref=e103]: AI Integration
+          - generic [ref=e104]: You need AI to do real work in your operation — not a demo that impresses in a boardroom and sits unused six months later. We map the highest-leverage workflows, build the integrations, and make sure your team actually adopts what gets deployed. Every engagement ends with working software in production.
+        - generic [ref=e105]:
+          - generic [ref=e106]: LLM Workflows
+          - generic [ref=e107]: Automation
+          - generic [ref=e108]: Internal Tools
+          - generic [ref=e109]: EHR / CRM Integration
+      - generic [ref=e110]:
+        - generic [ref=e111]: "02"
+        - generic [ref=e112]:
+          - generic [ref=e113]: Embedded Engineer
+          - generic [ref=e114]: Your team needs a senior engineer now — not in six months after recruiting, interviewing, and onboarding. We embed a CORDA engineer directly into your team on a monthly retainer. They attend your standups, review your PRs, and ship alongside your people. The knowledge stays with your team when the engagement ends.
+        - generic [ref=e115]:
+          - generic [ref=e116]: Any Stack
+          - generic [ref=e117]: Monthly Retainer
+          - generic [ref=e118]: 3-Month Minimum
+          - generic [ref=e119]: Knowledge Transfer
+      - generic [ref=e120]:
+        - generic [ref=e121]: "03"
+        - generic [ref=e122]:
+          - generic [ref=e123]: Fractional CTO
+          - generic [ref=e124]: You need serious technical leadership — architecture decisions, first engineering hires, investor due diligence prep — but a full-time CTO is premature. We embed as that person on a monthly retainer. We attend your standups, review PRs, and show up when the conversation turns technical with investors.
+        - generic [ref=e125]:
+          - generic [ref=e126]: Monthly Retainer
+          - generic [ref=e127]: Architecture
+          - generic [ref=e128]: Engineering Hiring
+          - generic [ref=e129]: Investor Prep
+      - generic [ref=e130]:
+        - generic [ref=e131]: "04"
+        - generic [ref=e132]:
+          - generic [ref=e133]: Discovery & Strategy
+          - generic [ref=e134]: You are about to make a significant software investment. Before you do, spend two weeks getting clarity on what to build, what it will cost, and whether custom software is even the right answer. Written scope, technical architecture, build-vs-buy analysis, phased roadmap. You own everything we produce.
+        - generic [ref=e135]:
+          - generic [ref=e136]: Fixed Price
+          - generic [ref=e137]: Roadmap
+          - generic [ref=e138]: Build vs. Buy
+          - generic [ref=e139]: Deliverables Yours to Keep
+    - link "Full service details →" [ref=e141] [cursor=pointer]:
+      - /url: services.html
+  - generic [ref=e142]:
+    - generic [ref=e143]: Approach
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - heading "We fix the problem, not just the symptoms." [level=2] [ref=e146]: We fix the problem,not just the symptoms.
+        - paragraph [ref=e147]: Most software projects fail because the scoping conversation never happened properly. Requirements got assumed, the wrong problem got an expensive solution. We close that gap. Every engagement starts with structured diagnostic work before a line of code gets written.
+        - generic [ref=e148]:
+          - generic [ref=e149]: What strategy time produces
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - generic [ref=e152]: Scope accuracy
+              - generic [ref=e154]: Very high
+            - generic [ref=e155]:
+              - generic [ref=e156]: Rework probability
+              - generic [ref=e158]: Very low
+            - generic [ref=e159]:
+              - generic [ref=e160]: Budget overrun risk
+              - generic [ref=e162]: Very low
+      - generic [ref=e163]:
+        - generic [ref=e166]:
+          - generic [ref=e167]: Define the problem before scoping the solution
+          - generic [ref=e168]: The scoping conversation is where most budget gets lost. We run structured diagnostic sessions before committing to anything. That investment pays back in every decision that follows.
+        - generic [ref=e171]:
+          - generic [ref=e172]: Senior engineers from day one, not after handoff
+          - generic [ref=e173]: The people in your kickoff meeting are the people writing the code. No account manager in the middle, no team you meet at week six.
+        - generic [ref=e176]:
+          - generic [ref=e177]: Software that gets used, not just shipped
+          - generic [ref=e178]: A deployed product nobody uses is not a success. We design for adoption from the first session — understanding who has to use the software and what makes them trust a new system.
+        - generic [ref=e181]:
+          - generic [ref=e182]: Honest advice, even when it costs us the work
+          - generic [ref=e183]: If the right answer is an off-the-shelf product or simply not building yet, we say that. We have turned down engagements because it was not the right call for the client. That is part of the service.
+  - generic [ref=e184]:
+    - generic [ref=e185]: Process
+    - heading "From conversation to working software. No gaps." [level=2] [ref=e186]: From conversation toworking software. No gaps.
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e189]: "01"
+        - generic [ref=e190]: 30-min diagnostic call
+        - generic [ref=e191]: No pitch. No deck. We ask about your business problem, what you have already tried, your timeline, and your budget range. We tell you honestly whether we are the right fit.
+      - generic [ref=e192]:
+        - generic [ref=e193]: "02"
+        - generic [ref=e194]: Fixed-price discovery
+        - generic [ref=e195]: "Two to three weeks: stakeholder interviews, workflow mapping, technical scoping, build-vs-buy analysis. Deliverables are yours to keep — use them with us or any team you choose."
+      - generic [ref=e196]:
+        - generic [ref=e197]: "03"
+        - generic [ref=e198]: Written, fixed-price proposal
+        - generic [ref=e199]: Defined deliverables, milestone schedule, and a total cost. No open-ended retainers, no scope that expands silently. You know exactly what you are buying before you commit.
+      - generic [ref=e200]:
+        - generic [ref=e201]: "04"
+        - generic [ref=e202]: Build, ship, hand off cleanly
+        - generic [ref=e203]: Weekly demos, direct Slack access, working software at every milestone. Clean documentation and a knowledge-transfer session so your team owns what gets built.
+  - generic [ref=e204]:
+    - generic [ref=e205]: Who we work with
+    - heading "Three situations where we fit exactly." [level=2] [ref=e206]: Three situationswhere we fit exactly.
+    - generic [ref=e207]:
+      - generic [ref=e208]:
+        - generic [ref=e209]: Situation 01
+        - generic [ref=e210]: You are about to spend serious money on software and want certainty before you commit.
+        - generic [ref=e211]: You have budget and a problem, but you are not confident the proposed solution is correct. You need an independent technical perspective. Our Discovery track is built for this moment — fixed price, deliverables in two weeks, no obligation to continue.
+      - generic [ref=e212]:
+        - generic [ref=e213]: Situation 02
+        - generic [ref=e214]: You have a specific operational problem that no off-the-shelf product solves.
+        - generic [ref=e215]: The products that exist do not fit your workflow, require a migration you cannot absorb, or cost more than building something specific. We build the specific thing you need. We do not try to expand scope or sell you a platform.
+      - generic [ref=e216]:
+        - generic [ref=e217]: Situation 03
+        - generic [ref=e218]: You need technical leadership, but a full-time CTO is premature.
+        - generic [ref=e219]: The decisions you make in the next six months — stack choices, first hires, architecture — will accelerate or haunt the next three years. You need someone who has been through this before. That is what our Fractional CTO track is for.
+  - generic [ref=e221]:
+    - generic [ref=e222]:
+      - generic [ref=e223]: Contact
+      - heading "What problem are you trying to solve?" [level=2] [ref=e224]: What problem areyou trying to solve?
+      - paragraph [ref=e225]: We open a small number of new client slots each quarter. Describe the actual problem — what it costs your business today, what you have already tried, and what a good outcome looks like. That context makes the first call much more useful.
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - generic [ref=e228]: Email
+          - link "hello@corda.studio" [ref=e229] [cursor=pointer]:
+            - /url: mailto:hello@corda.studio
+        - generic [ref=e230]:
+          - generic [ref=e231]: Based
+          - generic [ref=e232]: Houston, TX. Remote-first delivery.
+        - generic [ref=e233]:
+          - generic [ref=e234]: Response
+          - generic [ref=e235]: Within one business day.
+        - generic [ref=e236]:
+          - generic [ref=e237]: No commitment to
+          - generic [ref=e238]: Sending this form. It starts a conversation.
+    - generic [ref=e240]:
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - generic [ref=e243]: Your name
+          - textbox "Your name" [ref=e244]:
+            - /placeholder: Jane Smith
+        - generic [ref=e245]:
+          - generic [ref=e246]: Company
+          - textbox "Company" [ref=e247]:
+            - /placeholder: Acme Inc.
+      - generic [ref=e248]:
+        - generic [ref=e249]: Work email
+        - textbox "Work email" [ref=e250]:
+          - /placeholder: jane@company.com
+      - generic [ref=e251]:
+        - generic [ref=e252]: Where do you think you need help?
+        - combobox "Where do you think you need help?" [ref=e253] [cursor=pointer]:
+          - option "Select a track" [disabled] [selected]
+          - option "AI Integration — build AI into my operations"
+          - option "Embedded Engineer — I need a senior engineer in my team"
+          - option "Fractional CTO — technical leadership on retainer"
+          - option "Discovery & Strategy — scope before committing"
+          - option "Not sure yet — let us figure it out on a call"
+      - generic [ref=e254]:
+        - generic [ref=e255]: Describe the problem you are trying to solve
+        - textbox "Describe the problem you are trying to solve" [ref=e256]:
+          - /placeholder: What is the situation, what has been tried, and what does success look like? More context makes the first call more useful.
+      - button "Send message →" [ref=e257] [cursor=pointer]
+      - paragraph [ref=e258]: Sent directly to our inbox. We respond within one business day. No sales sequence, no automated follow-up.
+  - contentinfo [ref=e259]:
+    - generic [ref=e260]:
+      - generic [ref=e261]:
+        - generic [ref=e262]: COR
+        - generic [ref=e264]: DA
+      - generic [ref=e265]: Find the core. Build around it.
+    - navigation [ref=e266]:
+      - link "Services" [ref=e267] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=e268] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=e269] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=e270] [cursor=pointer]:
+        - /url: cases.html
+      - link "Blog" [ref=e271] [cursor=pointer]:
+        - /url: blog.html
+    - generic [ref=e272]: © 2025 Corda Studio. Houston, TX.

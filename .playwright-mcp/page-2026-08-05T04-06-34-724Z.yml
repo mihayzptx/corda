@@ -1,0 +1,193 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - link "COR DA" [ref=f4e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f4e4]: COR
+      - generic [ref=f4e6]: DA
+    - generic [ref=f4e7]:
+      - link "Services" [ref=f4e8] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=f4e9] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=f4e10] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=f4e11] [cursor=pointer]:
+        - /url: cases.html
+      - link "Approach" [ref=f4e12] [cursor=pointer]:
+        - /url: index.html#approach
+      - link "Blog" [ref=f4e13] [cursor=pointer]:
+        - /url: blog.html
+    - link "Talk to us" [ref=f4e14] [cursor=pointer]:
+      - /url: index.html#contact
+  - generic [ref=f4e15]:
+    - link "Home" [ref=f4e16] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=f4e17]: ›
+    - generic [ref=f4e18]: Blog
+  - generic [ref=f4e19]:
+    - generic [ref=f4e20]: Writing
+    - heading "Things worth knowing." [level=1] [ref=f4e21]
+    - paragraph [ref=f4e22]: No content marketing. No SEO padding. Just writing on the decisions, tradeoffs, and thinking behind software that actually works.
+    - generic [ref=f4e23]:
+      - button "All" [ref=f4e24] [cursor=pointer]
+      - button "AI Integration" [ref=f4e25] [cursor=pointer]
+      - button "Product Strategy" [ref=f4e26] [cursor=pointer]
+      - button "Technical Leadership" [ref=f4e27] [cursor=pointer]
+      - button "Process" [ref=f4e28] [cursor=pointer]
+  - generic [ref=f4e30]:
+    - link "October 3, 2024 AI Integration You do not have an AI problem. You have a workflow problem. Most companies investing in AI are doing it backwards. They find a model, then search for a use case. The companies that get real ROI start from the workflow and work backward to the technology. Here is how that process actually works. Read → 7 min" [ref=f4e31] [cursor=pointer]:
+      - /url: article-ai-discovery.html
+      - generic [ref=f4e32]:
+        - generic [ref=f4e33]: October 3, 2024
+        - generic [ref=f4e34]: AI Integration
+        - generic [ref=f4e35]: You do not have an AI problem. You have a workflow problem.
+        - paragraph [ref=f4e36]: Most companies investing in AI are doing it backwards. They find a model, then search for a use case. The companies that get real ROI start from the workflow and work backward to the technology. Here is how that process actually works.
+      - generic [ref=f4e37]:
+        - generic [ref=f4e38]: Read →
+        - generic [ref=f4e39]: 7 min
+    - link "October 17, 2024 Process The most expensive line in any software project is the one that never gets written. Scope creep gets blamed on changing requirements. It is almost always caused by a definition of done that was never written down. How to fix it before you start. Read → 5 min" [ref=f4e40] [cursor=pointer]:
+      - /url: article-discovery-scope.html
+      - generic [ref=f4e41]:
+        - generic [ref=f4e42]: October 17, 2024
+        - generic [ref=f4e43]: Process
+        - generic [ref=f4e44]: The most expensive line in any software project is the one that never gets written.
+        - paragraph [ref=f4e45]: Scope creep gets blamed on changing requirements. It is almost always caused by a definition of done that was never written down. How to fix it before you start.
+      - generic [ref=f4e46]:
+        - generic [ref=f4e47]: Read →
+        - generic [ref=f4e48]: 5 min
+    - link "October 29, 2024 Product Strategy Build vs. buy is the wrong question. Here is the right one. The real question is not whether to build. It is whether the problem you are solving is core to your competitive position, or just operational friction. The answer changes everything that follows. Read → 6 min" [ref=f4e49] [cursor=pointer]:
+      - /url: article-build-vs-buy.html
+      - generic [ref=f4e50]:
+        - generic [ref=f4e51]: October 29, 2024
+        - generic [ref=f4e52]: Product Strategy
+        - generic [ref=f4e53]: Build vs. buy is the wrong question. Here is the right one.
+        - paragraph [ref=f4e54]: The real question is not whether to build. It is whether the problem you are solving is core to your competitive position, or just operational friction. The answer changes everything that follows.
+      - generic [ref=f4e55]:
+        - generic [ref=f4e56]: Read →
+        - generic [ref=f4e57]: 6 min
+    - link "November 5, 2024 Technical Leadership What a fractional CTO actually does on a Monday morning. The title sounds strategic. The work is mostly tactical. A realistic look at what technical leadership means in a company that is still figuring out what it is building. Read → 8 min" [ref=f4e58] [cursor=pointer]:
+      - /url: article-fractional-cto.html
+      - generic [ref=f4e59]:
+        - generic [ref=f4e60]: November 5, 2024
+        - generic [ref=f4e61]: Technical Leadership
+        - generic [ref=f4e62]: What a fractional CTO actually does on a Monday morning.
+        - paragraph [ref=f4e63]: The title sounds strategic. The work is mostly tactical. A realistic look at what technical leadership means in a company that is still figuring out what it is building.
+      - generic [ref=f4e64]:
+        - generic [ref=f4e65]: Read →
+        - generic [ref=f4e66]: 8 min
+    - link "November 14, 2024 AI Integration Five things nobody tells you about running LLMs in production. The demo works perfectly. Then you deploy it. Here are the five failure modes that show up in the first 30 days of a real AI system running against real data from real users. Read → 9 min" [ref=f4e67] [cursor=pointer]:
+      - /url: article-llm-production.html
+      - generic [ref=f4e68]:
+        - generic [ref=f4e69]: November 14, 2024
+        - generic [ref=f4e70]: AI Integration
+        - generic [ref=f4e71]: Five things nobody tells you about running LLMs in production.
+        - paragraph [ref=f4e72]: The demo works perfectly. Then you deploy it. Here are the five failure modes that show up in the first 30 days of a real AI system running against real data from real users.
+      - generic [ref=f4e73]:
+        - generic [ref=f4e74]: Read →
+        - generic [ref=f4e75]: 9 min
+    - link "November 26, 2024 Technical Leadership Your first engineering hire is not a resource. It is an architectural decision. The person you hire first shapes everything that gets built afterward — the culture, the defaults, the technical debt, and the second and third hires. What to look for, and what to ignore. Read → 6 min" [ref=f4e76] [cursor=pointer]:
+      - /url: article-engineering-first-hire.html
+      - generic [ref=f4e77]:
+        - generic [ref=f4e78]: November 26, 2024
+        - generic [ref=f4e79]: Technical Leadership
+        - generic [ref=f4e80]: Your first engineering hire is not a resource. It is an architectural decision.
+        - paragraph [ref=f4e81]: The person you hire first shapes everything that gets built afterward — the culture, the defaults, the technical debt, and the second and third hires. What to look for, and what to ignore.
+      - generic [ref=f4e82]:
+        - generic [ref=f4e83]: Read →
+        - generic [ref=f4e84]: 6 min
+    - link "December 9, 2024 Product Strategy In defense of the monolith. Again. Microservices are a solution to a problem most early-stage companies do not have yet. The architectural decisions that let you move fast at $0 ARR are different from the ones you need at $10M. Build for where you are. Read → 7 min" [ref=f4e85] [cursor=pointer]:
+      - /url: article-monolith.html
+      - generic [ref=f4e86]:
+        - generic [ref=f4e87]: December 9, 2024
+        - generic [ref=f4e88]: Product Strategy
+        - generic [ref=f4e89]: In defense of the monolith. Again.
+        - paragraph [ref=f4e90]: Microservices are a solution to a problem most early-stage companies do not have yet. The architectural decisions that let you move fast at $0 ARR are different from the ones you need at $10M. Build for where you are.
+      - generic [ref=f4e91]:
+        - generic [ref=f4e92]: Read →
+        - generic [ref=f4e93]: 7 min
+    - 'link "December 20, 2024 AI Integration The adoption problem nobody talks about: your team does not trust the AI output. You can build the most technically correct AI system in the world and get zero adoption because the people who use it do not believe it. Trust is a design problem, not a model problem. Here is how we think about building systems that users actually rely on. Read → 10 min" [ref=f4e94] [cursor=pointer]':
+      - /url: article-ai-trust.html
+      - generic [ref=f4e95]:
+        - generic [ref=f4e96]: December 20, 2024
+        - generic [ref=f4e97]: AI Integration
+        - generic [ref=f4e98]: "The adoption problem nobody talks about: your team does not trust the AI output."
+        - paragraph [ref=f4e99]: You can build the most technically correct AI system in the world and get zero adoption because the people who use it do not believe it. Trust is a design problem, not a model problem. Here is how we think about building systems that users actually rely on.
+      - generic [ref=f4e100]:
+        - generic [ref=f4e101]: Read →
+        - generic [ref=f4e102]: 10 min
+    - link "January 8, 2025 Technical Leadership How to survive technical due diligence when you have been moving fast. Investors will send engineers to review your codebase. Most early-stage companies are not ready for that conversation. What gets flagged, what gets ignored, and what to fix before you start the raise. Read → 8 min" [ref=f4e103] [cursor=pointer]:
+      - /url: article-due-diligence.html
+      - generic [ref=f4e104]:
+        - generic [ref=f4e105]: January 8, 2025
+        - generic [ref=f4e106]: Technical Leadership
+        - generic [ref=f4e107]: How to survive technical due diligence when you have been moving fast.
+        - paragraph [ref=f4e108]: Investors will send engineers to review your codebase. Most early-stage companies are not ready for that conversation. What gets flagged, what gets ignored, and what to fix before you start the raise.
+      - generic [ref=f4e109]:
+        - generic [ref=f4e110]: Read →
+        - generic [ref=f4e111]: 8 min
+    - link "January 22, 2025 Process Why we charge for discovery and why you should insist on it. Free scoping sessions are not free. Someone is subsidizing your spec work, and it is shaping what you hear. Paid discovery changes the incentives on both sides of the conversation, and the deliverables are yours regardless of what comes next. Read → 5 min" [ref=f4e112] [cursor=pointer]:
+      - /url: article-discovery-value.html
+      - generic [ref=f4e113]:
+        - generic [ref=f4e114]: January 22, 2025
+        - generic [ref=f4e115]: Process
+        - generic [ref=f4e116]: Why we charge for discovery and why you should insist on it.
+        - paragraph [ref=f4e117]: Free scoping sessions are not free. Someone is subsidizing your spec work, and it is shaping what you hear. Paid discovery changes the incentives on both sides of the conversation, and the deliverables are yours regardless of what comes next.
+      - generic [ref=f4e118]:
+        - generic [ref=f4e119]: Read →
+        - generic [ref=f4e120]: 5 min
+    - 'link "February 4, 2025 AI Integration Building AI in healthcare: the compliance questions that actually matter. HIPAA gets most of the attention. The harder problems are the ones that HIPAA does not cover: clinical liability, explainability requirements, and what happens when the model is confidently wrong. Read → 9 min" [ref=f4e121] [cursor=pointer]':
+      - /url: article-healthcare-ai.html
+      - generic [ref=f4e122]:
+        - generic [ref=f4e123]: February 4, 2025
+        - generic [ref=f4e124]: AI Integration
+        - generic [ref=f4e125]: "Building AI in healthcare: the compliance questions that actually matter."
+        - paragraph [ref=f4e126]: "HIPAA gets most of the attention. The harder problems are the ones that HIPAA does not cover: clinical liability, explainability requirements, and what happens when the model is confidently wrong."
+      - generic [ref=f4e127]:
+        - generic [ref=f4e128]: Read →
+        - generic [ref=f4e129]: 9 min
+    - 'link "February 18, 2025 Product Strategy Embedded engineering arrangements: what makes them work and what kills them. We have seen both sides of this arrangement. The deals that work share a few common traits. The ones that fail tend to fail the same way. Here is the pattern. Read → 7 min" [ref=f4e130] [cursor=pointer]':
+      - /url: article-embedded.html
+      - generic [ref=f4e131]:
+        - generic [ref=f4e132]: February 18, 2025
+        - generic [ref=f4e133]: Product Strategy
+        - generic [ref=f4e134]: "Embedded engineering arrangements: what makes them work and what kills them."
+        - paragraph [ref=f4e135]: We have seen both sides of this arrangement. The deals that work share a few common traits. The ones that fail tend to fail the same way. Here is the pattern.
+      - generic [ref=f4e136]:
+        - generic [ref=f4e137]: Read →
+        - generic [ref=f4e138]: 7 min
+    - link "March 5, 2025 Product Strategy Why energy companies keep buying software that nobody uses. Field operations in oil and gas are running on tools built for a different industry. The enterprise platforms are overbuilt and under-adopted. The case for software that starts from the actual workflow, not the vendor's feature roadmap. Read → 6 min" [ref=f4e139] [cursor=pointer]:
+      - /url: article-energy-software.html
+      - generic [ref=f4e140]:
+        - generic [ref=f4e141]: March 5, 2025
+        - generic [ref=f4e142]: Product Strategy
+        - generic [ref=f4e143]: Why energy companies keep buying software that nobody uses.
+        - paragraph [ref=f4e144]: Field operations in oil and gas are running on tools built for a different industry. The enterprise platforms are overbuilt and under-adopted. The case for software that starts from the actual workflow, not the vendor's feature roadmap.
+      - generic [ref=f4e145]:
+        - generic [ref=f4e146]: Read →
+        - generic [ref=f4e147]: 6 min
+    - link "March 19, 2025 Process Why staying small is a product decision, not a growth failure. Most studios grow until quality gets hard to control, then they hire more people to manage the quality problem, then the product gets more generic. We chose a different model. Here is what that actually looks like in practice. Read → 5 min" [ref=f4e148] [cursor=pointer]:
+      - /url: article-small-studio.html
+      - generic [ref=f4e149]:
+        - generic [ref=f4e150]: March 19, 2025
+        - generic [ref=f4e151]: Process
+        - generic [ref=f4e152]: Why staying small is a product decision, not a growth failure.
+        - paragraph [ref=f4e153]: Most studios grow until quality gets hard to control, then they hire more people to manage the quality problem, then the product gets more generic. We chose a different model. Here is what that actually looks like in practice.
+      - generic [ref=f4e154]:
+        - generic [ref=f4e155]: Read →
+        - generic [ref=f4e156]: 5 min
+  - generic [ref=f4e157]:
+    - generic [ref=f4e158]: Work with us
+    - heading "Read enough? Let's talk." [level=2] [ref=f4e159]
+    - paragraph [ref=f4e160]: We take on fewer projects than most studios. That is the point. Tell us what you are working on.
+    - generic [ref=f4e161]:
+      - link "Start a conversation" [ref=f4e162] [cursor=pointer]:
+        - /url: index.html#contact
+      - link "See our work →" [ref=f4e163] [cursor=pointer]:
+        - /url: cases.html
+  - contentinfo [ref=f4e164]:
+    - generic [ref=f4e165]:
+      - generic [ref=f4e166]:
+        - generic [ref=f4e167]: COR
+        - generic [ref=f4e169]: DA
+      - generic [ref=f4e170]: Find the core. Build around it.
+    - generic [ref=f4e171]: © 2025 Corda Studio. Houston, TX.

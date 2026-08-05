@@ -1,0 +1,117 @@
+- generic [active] [ref=f2e1]:
+  - navigation [ref=f2e2]:
+    - link "COR DA" [ref=f2e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f2e4]: COR
+      - generic [ref=f2e6]: DA
+    - generic [ref=f2e7]:
+      - link "Services" [ref=f2e8] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=f2e9] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=f2e10] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=f2e11] [cursor=pointer]:
+        - /url: cases.html
+      - link "Approach" [ref=f2e12] [cursor=pointer]:
+        - /url: index.html#approach
+      - link "Blog" [ref=f2e13] [cursor=pointer]:
+        - /url: blog.html
+    - link "Talk to us" [ref=f2e14] [cursor=pointer]:
+      - /url: index.html#contact
+  - generic [ref=f2e15]:
+    - link "Home" [ref=f2e16] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=f2e17]: ›
+    - generic [ref=f2e18]: Industries
+  - generic [ref=f2e19]:
+    - generic [ref=f2e20]: Where we work
+    - heading "Domain knowledge matters." [level=1] [ref=f2e21]
+    - paragraph [ref=f2e22]: Generic software thinking produces generic results. We focus on industries where we have seen the problems before and can contribute something beyond execution. If your sector is not listed, reach out anyway.
+  - generic [ref=f2e24]:
+    - generic [ref=f2e25]:
+      - generic [ref=f2e26]: ⚡
+      - generic [ref=f2e27]: Energy & Cleantech
+      - paragraph [ref=f2e28]: Field operations, asset monitoring, compliance workflows, and carbon tracking are all areas where the right software creates compounding operational leverage. We have worked alongside companies managing distributed infrastructure at scale — from upstream oil and gas to renewable asset portfolios.
+      - generic [ref=f2e29]:
+        - generic [ref=f2e30]: Field Operations
+        - generic [ref=f2e31]: Asset Monitoring
+        - generic [ref=f2e32]: Compliance
+        - generic [ref=f2e33]: Carbon Tracking
+    - generic [ref=f2e34]:
+      - generic [ref=f2e35]: 🏥
+      - generic [ref=f2e36]: Healthcare & MedTech
+      - paragraph [ref=f2e37]: Patient workflows, clinical data management, revenue cycle operations, and care coordination all sit at the intersection of compliance and usability. We build software that survives regulatory scrutiny and still gets adopted by the people who have to use it every day.
+      - generic [ref=f2e38]:
+        - generic [ref=f2e39]: Patient Workflows
+        - generic [ref=f2e40]: RCM
+        - generic [ref=f2e41]: EHR Integration
+        - generic [ref=f2e42]: HIPAA
+    - generic [ref=f2e43]:
+      - generic [ref=f2e44]: 📈
+      - generic [ref=f2e45]: Financial Services
+      - paragraph [ref=f2e46]: From early-stage fintech products to internal tooling at established firms, we understand the compliance surface area and the performance expectations that come with financial software. We work with founders building net-new products and with operators digitizing processes that still run on spreadsheets.
+      - generic [ref=f2e47]:
+        - generic [ref=f2e48]: Fintech
+        - generic [ref=f2e49]: Internal Tools
+        - generic [ref=f2e50]: Compliance Workflows
+        - generic [ref=f2e51]: Data Infrastructure
+    - generic [ref=f2e52]:
+      - generic [ref=f2e53]: 📰
+      - generic [ref=f2e54]: Media & Publishing
+      - paragraph [ref=f2e55]: Audience platforms, content operations, subscription infrastructure, and AI-assisted editorial workflows are areas where we have deep experience. We have worked with publishers ranging from regional outlets to national media brands navigating the shift to direct reader revenue.
+      - generic [ref=f2e56]:
+        - generic [ref=f2e57]: Audience Platforms
+        - generic [ref=f2e58]: Subscriptions
+        - generic [ref=f2e59]: Content Ops
+        - generic [ref=f2e60]: Editorial AI
+    - generic [ref=f2e61]:
+      - generic [ref=f2e62]: 🏭
+      - generic [ref=f2e63]: Manufacturing & Operations
+      - paragraph [ref=f2e64]: Operational complexity in manufacturing is where software ROI is often highest and most underserved. Work order management, quality control, supplier coordination, and production visibility are all areas where a well-scoped custom tool outperforms the bloated enterprise platforms that dominate the space.
+      - generic [ref=f2e65]:
+        - generic [ref=f2e66]: Work Order Management
+        - generic [ref=f2e67]: Quality Control
+        - generic [ref=f2e68]: Supply Chain
+        - generic [ref=f2e69]: Production Visibility
+    - generic [ref=f2e70]:
+      - generic [ref=f2e71]: 🧩
+      - generic [ref=f2e72]: SaaS & Software
+      - paragraph [ref=f2e73]: Early-stage SaaS companies often need a clear-eyed technical co-founder more than they need a development shop. We help founders who have validated demand but have not yet made foundational architectural decisions — the ones that will either accelerate or haunt them for the next five years.
+      - generic [ref=f2e74]:
+        - generic [ref=f2e75]: Early-Stage SaaS
+        - generic [ref=f2e76]: Architecture
+        - generic [ref=f2e77]: Technical Co-Founder
+        - generic [ref=f2e78]: Scale Readiness
+  - generic [ref=f2e80]:
+    - generic [ref=f2e81]:
+      - generic [ref=f2e82]: Our read on every sector
+      - heading "The problems are specific. The patterns are not." [level=2] [ref=f2e83]: The problems are specific.The patterns are not.
+      - paragraph [ref=f2e84]: "Every industry has its own language, constraints, and political landscape. But the underlying software problems are familiar: bad data making its way into decisions, manual processes nobody has time to fix, and systems that do not talk to each other. We have seen enough of these to move fast when we encounter them."
+      - paragraph [ref=f2e85]: The first thing we do in every engagement is spend real time understanding the domain before touching any code. That investment pays back in every decision that follows.
+    - generic [ref=f2e86]:
+      - generic [ref=f2e89]:
+        - generic [ref=f2e90]: We learn your domain first
+        - generic [ref=f2e91]: Discovery is not just technical scoping. It is understanding the actual business, the people who use the software, and the constraints that are non-negotiable.
+      - generic [ref=f2e94]:
+        - generic [ref=f2e95]: We flag industry-specific risks
+        - generic [ref=f2e96]: Regulatory exposure, data sensitivity, integration complexity with legacy systems — we surface these before they surface during build.
+      - generic [ref=f2e99]:
+        - generic [ref=f2e100]: We match the language
+        - generic [ref=f2e101]: Software that does not use the vocabulary of the people who operate it does not get adopted. We spend time on this and it shows.
+  - generic [ref=f2e102]:
+    - generic [ref=f2e103]: Work with us
+    - heading "Your sector. Our attention." [level=2] [ref=f2e104]
+    - paragraph [ref=f2e105]: Tell us what you are building and the problem you are trying to solve. We will tell you if we are the right fit.
+    - generic [ref=f2e106]:
+      - link "Start a conversation" [ref=f2e107] [cursor=pointer]:
+        - /url: index.html#contact
+      - link "See our cases →" [ref=f2e108] [cursor=pointer]:
+        - /url: cases.html
+  - contentinfo [ref=f2e109]:
+    - generic [ref=f2e110]:
+      - generic [ref=f2e111]:
+        - generic [ref=f2e112]: COR
+        - generic [ref=f2e114]: DA
+      - generic [ref=f2e115]: Find the core. Build around it.
+    - generic [ref=f2e116]: © 2025 Corda Studio. Houston, TX.

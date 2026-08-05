@@ -1,0 +1,181 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - link "COR DA" [ref=f1e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f1e4]: COR
+      - generic [ref=f1e6]: DA
+    - generic [ref=f1e7]:
+      - link "Services" [ref=f1e8] [cursor=pointer]:
+        - /url: services.html
+      - link "Industries" [ref=f1e9] [cursor=pointer]:
+        - /url: industries.html
+      - link "Technology" [ref=f1e10] [cursor=pointer]:
+        - /url: technology.html
+      - link "Cases" [ref=f1e11] [cursor=pointer]:
+        - /url: cases.html
+      - link "Approach" [ref=f1e12] [cursor=pointer]:
+        - /url: index.html#approach
+      - link "Blog" [ref=f1e13] [cursor=pointer]:
+        - /url: blog.html
+    - link "Talk to us" [ref=f1e14] [cursor=pointer]:
+      - /url: index.html#contact
+  - generic [ref=f1e15]:
+    - link "Home" [ref=f1e16] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=f1e17]: ›
+    - generic [ref=f1e18]: Services
+  - generic [ref=f1e19]:
+    - generic [ref=f1e20]: What we offer
+    - heading "Four ways to work with CORDA." [level=1] [ref=f1e21]
+    - paragraph [ref=f1e22]: Every engagement starts with a real conversation. If you are not sure which track fits, start with Discovery. That is what most new clients do, and it is often where the most valuable thinking happens.
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - generic [ref=f1e25]: <8
+        - generic [ref=f1e26]: Clients at once
+      - generic [ref=f1e27]:
+        - generic [ref=f1e28]: 2 wk
+        - generic [ref=f1e29]: To written proposal
+      - generic [ref=f1e30]:
+        - generic [ref=f1e31]: 60d
+        - generic [ref=f1e32]: First working build
+      - generic [ref=f1e33]:
+        - generic [ref=f1e34]: "0"
+        - generic [ref=f1e35]: Middlemen
+  - generic [ref=f1e36]:
+    - generic [ref=f1e37]:
+      - generic [ref=f1e38]:
+        - generic [ref=f1e39]: 01 / AI Integration
+        - heading "Turn AI from a talking point into a working system." [level=2] [ref=f1e40]
+        - paragraph [ref=f1e41]: Most companies know AI should be part of their operation. Few know exactly where, or how to get there without wasting six months building something nobody uses. We map the highest-leverage opportunities in your specific workflow, then build systems that your team actually adopts. Every engagement ends with working, deployed software — not a prototype, not a slide deck, not a proof-of-concept that requires three more phases to become useful.
+        - paragraph [ref=f1e42]: We work across LLM-based workflows, document processing, internal tools, customer-facing automation, and data pipelines. We are not tied to any vendor stack. We pick what fits the problem.
+        - generic [ref=f1e43]:
+          - generic [ref=f1e44]: LLM Workflows
+          - generic [ref=f1e45]: Document AI
+          - generic [ref=f1e46]: Internal Tools
+          - generic [ref=f1e47]: Automation
+          - generic [ref=f1e48]: Data Pipelines
+      - generic [ref=f1e49]:
+        - generic [ref=f1e50]: What is included
+        - generic [ref=f1e51]:
+          - generic [ref=f1e54]:
+            - strong [ref=f1e55]: Opportunity mapping
+            - text: A structured audit of your current workflows to find where AI creates real leverage, not just novelty.
+          - generic [ref=f1e58]:
+            - strong [ref=f1e59]: Build and ship
+            - text: End-to-end development of the integration, fully deployed and handed off with documentation.
+          - generic [ref=f1e62]:
+            - strong [ref=f1e63]: Team onboarding
+            - text: We make sure the people who need to use the system understand it and trust it.
+          - generic [ref=f1e66]:
+            - strong [ref=f1e67]: Iteration support
+            - text: Optional post-launch support retainer to refine behavior as real usage surfaces edge cases.
+        - generic [ref=f1e68]:
+          - generic [ref=f1e69]: Typical engagement
+          - generic [ref=f1e70]: Fixed price. 6–12 weeks. Starts with paid discovery.
+    - generic [ref=f1e71]:
+      - generic [ref=f1e72]:
+        - generic [ref=f1e73]: 02 / Embedded Engineer
+        - heading "A senior engineer inside your team. From next month." [level=2] [ref=f1e74]
+        - paragraph [ref=f1e75]: Recruiting a senior engineer takes three to six months on a good day. You post the role, screen candidates, run interviews, make an offer, wait out a notice period, and then spend another month onboarding before they are actually productive. Meanwhile the work is not getting done.
+        - paragraph [ref=f1e76]: This track is the alternative. A CORDA engineer embeds directly into your existing team on a monthly retainer. They attend your standups, work in your codebase, review PRs alongside your people, and contribute to architecture decisions. They are functionally indistinguishable from a hire — without the recruiting timeline, the equity cost, or the long-term headcount commitment.
+        - paragraph [ref=f1e77]: When the engagement ends, the knowledge stays with your team. We document what was built, hand off cleanly, and leave your engineers in a stronger position than before we arrived.
+        - generic [ref=f1e78]:
+          - generic [ref=f1e79]: Monthly Retainer
+          - generic [ref=f1e80]: Any Stack
+          - generic [ref=f1e81]: 3-Month Minimum
+          - generic [ref=f1e82]: Knowledge Transfer
+          - generic [ref=f1e83]: Senior Only
+      - generic [ref=f1e84]:
+        - generic [ref=f1e85]: How it works
+        - generic [ref=f1e86]:
+          - generic [ref=f1e89]:
+            - strong [ref=f1e90]: One-week onboarding
+            - text: We learn your codebase, your deployment setup, and how your team works. By week two we are shipping.
+          - generic [ref=f1e93]:
+            - strong [ref=f1e94]: Fully embedded, not advisory
+            - text: We are in your Slack, your GitHub, your sprint board. We attend your standups and your architecture discussions. We do the work, not just the review.
+          - generic [ref=f1e97]:
+            - strong [ref=f1e98]: Month-to-month after the minimum
+            - text: Three-month minimum to make the onboarding worthwhile. After that, monthly rolling. No lock-in.
+          - generic [ref=f1e101]:
+            - strong [ref=f1e102]: Clean exit
+            - text: When you are ready to hire or wind down, we document everything, brief your team, and hand off with zero knowledge loss.
+        - generic [ref=f1e103]:
+          - generic [ref=f1e104]: Structure
+          - generic [ref=f1e105]: Monthly retainer. 3-month minimum. Scope agreed upfront — hours per week, primary focus, team integration.
+    - generic [ref=f1e106]:
+      - generic [ref=f1e107]:
+        - generic [ref=f1e108]: 03 / Fractional CTO
+        - heading "Senior technical leadership without the full-time headcount." [level=2] [ref=f1e109]
+        - paragraph [ref=f1e110]: "Early-stage companies often do not need a full-time CTO — they need someone who has been in the room before and can make the calls that matter: architecture decisions, the first technical hire, how to talk to investors about your stack, when to build vs. buy, how to run a vendor evaluation. We embed as that person on a monthly retainer."
+        - paragraph [ref=f1e111]: This is a working role, not a consulting relationship. We attend your standups, review pull requests, run your engineering hiring process, and show up for investor meetings when the conversation turns technical.
+        - generic [ref=f1e112]:
+          - generic [ref=f1e113]: Monthly Retainer
+          - generic [ref=f1e114]: Architecture
+          - generic [ref=f1e115]: Hiring
+          - generic [ref=f1e116]: Investor Prep
+          - generic [ref=f1e117]: Vendor Selection
+      - generic [ref=f1e118]:
+        - generic [ref=f1e119]: Scope of work
+        - generic [ref=f1e120]:
+          - generic [ref=f1e123]:
+            - strong [ref=f1e124]: Architecture and technical direction
+            - text: All major technical decisions run through us before they get built into the foundation.
+          - generic [ref=f1e127]:
+            - strong [ref=f1e128]: Engineering hiring
+            - text: We write job descriptions, review candidates, run technical screens, and help you make the right first hires.
+          - generic [ref=f1e131]:
+            - strong [ref=f1e132]: Investor and board prep
+            - text: Technical due diligence readiness, architecture narratives, and live Q&A support during raise processes.
+          - generic [ref=f1e135]:
+            - strong [ref=f1e136]: Vendor management
+            - text: Evaluation, contracts, and ongoing oversight of any third-party technical relationships.
+        - generic [ref=f1e137]:
+          - generic [ref=f1e138]: Pricing
+          - generic [ref=f1e139]: Monthly retainer. Typically 2–4 days per month dedicated.
+    - generic [ref=f1e140]:
+      - generic [ref=f1e141]:
+        - generic [ref=f1e142]: 04 / Discovery & Strategy
+        - heading "Clarity before commitment." [level=2] [ref=f1e143]
+        - paragraph [ref=f1e144]: Before you spend serious money building something, you need to know you are building the right thing. Discovery is a fixed-price, time-boxed engagement — usually two to three weeks — that produces a written scope, a technical architecture plan, a build-vs-buy analysis, and a phased roadmap with real cost estimates. You can take those deliverables and build with us, or take them to any team you choose.
+        - paragraph [ref=f1e145]: Most of our ongoing client relationships started here. It is the right way to begin, and we designed it so you leave with something useful regardless of what comes next.
+        - generic [ref=f1e146]:
+          - generic [ref=f1e147]: Fixed Price
+          - generic [ref=f1e148]: Roadmap
+          - generic [ref=f1e149]: Scoping
+          - generic [ref=f1e150]: Architecture Plan
+          - generic [ref=f1e151]: Build vs. Buy
+      - generic [ref=f1e152]:
+        - generic [ref=f1e153]: Deliverables
+        - generic [ref=f1e154]:
+          - generic [ref=f1e157]:
+            - strong [ref=f1e158]: Problem definition document
+            - text: A written, agreed definition of the actual problem — including what is out of scope.
+          - generic [ref=f1e161]:
+            - strong [ref=f1e162]: Technical scope and architecture
+            - text: Stack recommendation, system design, integrations required, and technical risks flagged.
+          - generic [ref=f1e165]:
+            - strong [ref=f1e166]: Phased roadmap with estimates
+            - text: Phase-by-phase plan with realistic time and cost ranges based on the defined scope.
+          - generic [ref=f1e169]:
+            - strong [ref=f1e170]: Build vs. buy analysis
+            - text: An honest assessment of where custom software is worth it and where off-the-shelf tools are the smarter call.
+        - generic [ref=f1e171]:
+          - generic [ref=f1e172]: Pricing
+          - generic [ref=f1e173]: Fixed price. Delivered in 2–3 weeks. Outcomes are yours to keep.
+  - generic [ref=f1e174]:
+    - generic [ref=f1e175]: Ready to start
+    - heading "Not sure which track fits? Start with a call." [level=2] [ref=f1e176]
+    - paragraph [ref=f1e177]: 30 minutes. We will tell you honestly which engagement makes sense for where you are right now.
+    - generic [ref=f1e178]:
+      - link "Start a conversation" [ref=f1e179] [cursor=pointer]:
+        - /url: index.html#contact
+      - link "See our work →" [ref=f1e180] [cursor=pointer]:
+        - /url: cases.html
+  - contentinfo [ref=f1e181]:
+    - generic [ref=f1e182]:
+      - generic [ref=f1e183]:
+        - generic [ref=f1e184]: COR
+        - generic [ref=f1e186]: DA
+      - generic [ref=f1e187]: Find the core. Build around it.
+    - generic [ref=f1e188]: © 2025 Corda Studio. Houston, TX.
