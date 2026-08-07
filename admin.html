@@ -194,7 +194,7 @@
     <div class="login-sub">Blog Admin</div>
     <input type="password" id="pwd-input" placeholder="Enter password" autocomplete="current-password">
     <div class="login-error" id="login-error"></div>
-    <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="checkPassword()">Enter</button>
+    <button class="btn btn-gold w-full flex-center" onclick="checkPassword()">Enter</button>
   </div>
 </div>
 
@@ -216,7 +216,7 @@
       <div class="sidebar-section-label">Posts</div>
       <ul class="post-list" id="post-list"></ul>
       <div class="sidebar-new">
-        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="newPost()">+ New post</button>
+        <button class="btn btn-gold w-full flex-center" onclick="newPost()">+ New post</button>
       </div>
     </div>
 
@@ -224,11 +224,11 @@
     <div class="admin-main" id="admin-main">
       <div class="editor-empty" id="editor-empty">
         <div class="editor-empty-icon">✦</div>
-        <div style="font-size:16px;color:var(--soft)">Select a post to edit or create a new one.</div>
+        <div class="text-16 text-soft">Select a post to edit or create a new one.</div>
         <button class="btn btn-gold" onclick="newPost()">+ New post</button>
       </div>
 
-      <div id="editor-panel" style="display:none">
+      <div id="editor-panel" class="hidden">
         <div class="editor-header">
           <div class="editor-title-area">
             <div class="editor-title" id="editor-heading">New post</div>
@@ -269,7 +269,7 @@
 
           <div class="field">
             <label>Excerpt (shown on blog card)</label>
-            <textarea id="f-excerpt" style="min-height:80px" placeholder="One or two sentences that make someone want to read the full article."></textarea>
+            <textarea id="f-excerpt" class="min-h-80" placeholder="One or two sentences that make someone want to read the full article."></textarea>
           </div>
 
           <div class="field">
@@ -298,7 +298,7 @@
               <button class="toolbar-btn" onclick="ins('toc')">TOC stub</button>
               <button class="toolbar-btn" onclick="ins('related')">Related links</button>
             </div>
-            <div class="field content-wrap" style="margin-top:0">
+            <div class="field content-wrap mt-0">
               <textarea id="f-content" class="content-area" placeholder="Write your article content here in HTML. Use the toolbar buttons to insert common elements quickly.&#10;&#10;Example:&#10;&lt;h2&gt;Section heading&lt;/h2&gt;&#10;&lt;p&gt;Your paragraph text here.&lt;/p&gt;"></textarea>
             </div>
           </div>
@@ -344,7 +344,7 @@
       <div class="output-block">
         <div class="output-block-header">
           <span class="output-block-label" id="out-filename">article-new.html</span>
-          <div style="display:flex;gap:8px">
+          <div class="flex gap-2">
             <button class="copy-btn" onclick="downloadFile()">⬇ Download file</button>
             <button class="copy-btn" id="copy-article-btn" onclick="copyText('article-out', 'copy-article-btn')">Copy HTML</button>
           </div>
@@ -625,7 +625,7 @@ function buildArticleHTML(p, slug) {
     <a class="nav-pill" href="technology.html">Technology</a>
     <a class="nav-pill" href="cases.html">Cases</a>
     <a class="nav-pill" href="index.html#approach">Approach</a>
-    <a class="nav-pill" href="blog.html" style="color:var(--text)">Blog</a>
+    <a class="nav-pill" href="blog.html" class="text-text">Blog</a>
   </div>
   <a class="nav-cta" href="index.html#contact">Talk to us</a>
 </nav>
@@ -633,7 +633,7 @@ function buildArticleHTML(p, slug) {
 <a class="art-back" href="blog.html">&#8592; Back to blog</a>
 
 <div class="article-hero">
-  <div class="mesh m1" style="top:-80px;right:-100px;width:500px;height:500px;opacity:0.6;"></div>
+  <div class="mesh m1 mesh-pos-2"></div>
   <div class="art-meta">
     <span class="blog-tag">${tagFull}</span>
     <span class="art-sep">/</span>
@@ -642,7 +642,7 @@ function buildArticleHTML(p, slug) {
     <span class="art-read-time">${p.readtime} min read</span>
   </div>
   <h1 class="art-title reveal">${p.title}</h1>
-  <p class="art-sub reveal" style="transition-delay:0.08s">${p.subtitle || p.excerpt}</p>
+  <p class="art-sub reveal delay-08">${p.subtitle || p.excerpt}</p>
 </div>
 
 <div class="article-body">
@@ -652,11 +652,11 @@ ${p.content}
 
   </div>
 
-  <aside class="article-sidebar reveal" style="transition-delay:0.1s">
+  <aside class="article-sidebar reveal delay-1">
 ${relatedHtml || `    <div class="art-toc">
       <div class="art-toc-label">In this article</div>
     </div>`}
-    <a class="btn-main" href="services.html" style="display:block;text-align:center;margin-top:12px;">See our services</a>
+    <a class="btn-main" href="services.html" class="block text-center mt-3">See our services</a>
   </aside>
 </div>
 

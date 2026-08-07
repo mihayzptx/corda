@@ -15,3 +15,46 @@
 .text-soft { color: var(--soft); }
 .text-gold { color: var(--gold); }
 .text-gold2 { color: var(--gold2); }
+
+/* ── ANIMATION DELAYS ── */
+.delay-04 { animation-delay: 0.04s; }
+.delay-06 { animation-delay: 0.06s; }
+.delay-08 { animation-delay: 0.08s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-12 { animation-delay: 0.12s; }
+.delay-14 { animation-delay: 0.14s; }
+.delay-16 { animation-delay: 0.16s; }
+.delay-18 { animation-delay: 0.18s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-26 { animation-delay: 0.26s; }
+
+/* ── SPACING ── */
+.mt-0 { margin-top: 0; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+.mt-12 { margin-top: 48px; }
+.mb-5 { margin-bottom: 20px; }
+
+/* ── SIZING ── */
+.w-full { width: 100%; }
+.min-h-80 { min-height: 80px; }
+
+/* ── FLEX ── */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.gap-2 { gap: 8px; }
+
+/* ── TEXT ── */
+.text-12 { font-size: 12px; }
+.text-14 { font-size: 14px; }
+.text-16 { font-size: 16px; }
+.font-mono { font-family: var(--mono); }
+.tracking-1 { letter-spacing: 0.1em; }
+.leading-relaxed { line-height: 1.85; }
+.overflow-x-hidden { overflow-x: hidden; }
+
+/* ── MESH POSITIONING ── */
+.mesh-pos-1 { top: -60px; right: -80px; width: 600px; height: 600px; }
+.mesh-pos-2 { top: -80px; right: -100px; width: 500px; height: 500px; opacity: 0.6; }
+.mesh-pos-3 { top: -80px; right: -100px; width: 700px; height: 700px; opacity: 0.6; }
+.mesh-pos-4 { top: -80px; right: -100px; width: 700px; height: 700px; }
