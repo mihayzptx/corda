@@ -1,0 +1,53 @@
+/* ─────────────────────────────────────────
+   CORDA Studio — base.css
+   ─────────────────────────────────────── */
+
+@import url('variables.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #060606;
+  --s1:         rgba(255,255,255,0.055);
+  --s2:         rgba(255,255,255,0.10);
+  --border:     rgba(255,255,255,0.13);
+  --border2:    rgba(255,255,255,0.24);
+  --text:       #FAF7F2;
+  --muted:      #8C8680;
+  --soft:       #C4BDB5;
+  --gold:       #F5C842;
+  --gold2:      #FFD966;
+  --gold3:      #FFF0A0;
+  --gold-bg:    rgba(245,200,66,0.13);
+  --gold-glow:  rgba(245,200,66,0.40);
+  --gold-glow2: rgba(245,200,66,0.15);
+  --display:    'Bricolage Grotesque', sans-serif;
+  --body:       'Outfit', sans-serif;
+  --mono:       'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); }
