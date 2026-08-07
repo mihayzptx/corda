@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import pool from './config/database';
+import authRoutes from './routes/auth';
+import { errorHandler } from './middleware/errorHandler';
 
 dotenv.config();
 
@@ -15,9 +18,18 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+app.get('/health', async (req, res) => {
+  try {
+    await pool.query('SELECT 1');
+    res.json({ status: 'ok', database: 'connected', timestamp: new Date().toISOString() });
+  } catch (err) {
+    res.status(500).json({ error: 'database_connection_failed' });
+  }
 });
+
+app.use('/api', authRoutes);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Portal backend running on port ${PORT}`);
