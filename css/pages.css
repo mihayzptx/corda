@@ -6,7 +6,7 @@
 
 /* ── SECTIONS ── */
 .section { padding: 96px 52px; border-top: 1px solid var(--border); }
-.section.alt { background: rgba(0,0,0,0.02); }
+.section.alt { background: rgba(255,255,255,0.02); }
 
 .s-pre {
   display: flex;
@@ -287,7 +287,7 @@
 .f-group input,
 .f-group textarea,
 .f-group select {
-  background: rgba(0,0,0,0.03);
+  background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
   padding: 12px 14px;
   font-family: var(--body);
@@ -386,7 +386,7 @@ footer {
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0.18em;
-  color: rgba(0,0,0,0.15);
+  color: rgba(255,255,255,0.3);
 }
 
 .f-tagline { font-size: 12px; color: var(--muted); font-style: italic; }
@@ -1519,7 +1519,7 @@ footer {
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(circle, rgba(0,102,204,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245,200,66,0.07) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   transition: opacity 0.4s;
   top: 0; left: 0;
@@ -1659,7 +1659,7 @@ footer {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, transparent, rgba(0,102,204,0.15), transparent);
+  background: linear-gradient(135deg, transparent, rgba(245,200,66,0.4), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1691,7 +1691,7 @@ footer {
 }
 
 .ts-card:hover {
-  border-color: rgba(0,102,204,0.15);
+  border-color: rgba(245,200,66,0.4);
   transform: translateY(-3px);
 }
 
@@ -1746,7 +1746,7 @@ footer {
 }
 
 .ts-card:hover .ts-tool {
-  border-color: rgba(0,102,204,0.10);
+  border-color: rgba(245,200,66,0.2);
   color: var(--gold2);
 }
 
@@ -1858,7 +1858,7 @@ footer {
 }
 
 .aip-node.highlight {
-  border-color: rgba(0,102,204,0.15);
+  border-color: rgba(245,200,66,0.4);
   background: var(--gold-bg);
 }
 
@@ -1897,7 +1897,7 @@ footer {
 }
 
 .team-card:hover {
-  border-color: rgba(0,102,204,0.12);
+  border-color: rgba(245,200,66,0.24);
   background: var(--s2);
 }
 

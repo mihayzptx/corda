@@ -3,20 +3,20 @@
    ─────────────────────────────────────── */
 
 :root {
-  --bg:         #ffffff;
-  --s1:         #f9fafb;
-  --s2:         #f3f4f6;
-  --border:     #e5e7eb;
-  --border2:    #d1d5db;
-  --text:       #1f2937;
-  --muted:      #6b7280;
-  --soft:       #9ca3af;
-  --gold:       #0066cc;
-  --gold2:      #0052a3;
-  --gold3:      #e6f0ff;
-  --gold-bg:    rgba(0,102,204,0.08);
-  --gold-glow:  rgba(0,102,204,0.15);
-  --gold-glow2: rgba(0,102,204,0.05);
+  --bg:         #060606;
+  --s1:         rgba(255,255,255,0.055);
+  --s2:         rgba(255,255,255,0.10);
+  --border:     rgba(255,255,255,0.13);
+  --border2:    rgba(255,255,255,0.24);
+  --text:       #FAF7F2;
+  --muted:      #8C8680;
+  --soft:       #C4BDB5;
+  --gold:       #F5C842;
+  --gold2:      #FFD966;
+  --gold3:      #FFF0A0;
+  --gold-bg:    rgba(245,200,66,0.13);
+  --gold-glow:  rgba(245,200,66,0.40);
+  --gold-glow2: rgba(245,200,66,0.15);
   --display:    'Bricolage Grotesque', sans-serif;
   --body:       'Outfit', sans-serif;
   --mono:       'DM Mono', monospace;

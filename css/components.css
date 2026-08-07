@@ -23,13 +23,13 @@
 
 .m1 {
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(0,102,204,0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(245,200,66,0.24) 0%, transparent 65%);
   top: -80px; right: -120px;
 }
 
 .m2 {
   width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(0,102,204,0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(245,200,66,0.12) 0%, transparent 65%);
   bottom: 80px; left: -60px;
 }
 
@@ -63,7 +63,7 @@
 @keyframes rise { to { transform: translateY(0); } }
 
 .hnd-cor { color: var(--gold); }
-.hnd-da  { color: rgba(0,0,0,0.12); }
+.hnd-da  { color: rgba(255,255,255,0.18); }
 
 .hero-tagline {
   font-family: var(--display);
@@ -188,7 +188,7 @@
   align-items: center;
   gap: 14px;
   padding: 13px 16px;
-  background: rgba(0,0,0,0.02);
+  background: rgba(255,255,255,0.02);
   border: 1px solid var(--border);
   border-radius: 10px;
   transition: border-color 0.22s, background 0.22s;
@@ -339,7 +339,7 @@
 
 .bar-track {
   height: 5px;
-  background: rgba(0,0,0,0.04);
+  background: rgba(255,255,255,0.06);
   border-radius: 100px;
   overflow: hidden;
 }
