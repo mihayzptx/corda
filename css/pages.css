@@ -1878,3 +1878,60 @@ footer {
   flex-wrap: wrap;
   margin-top: 36px;
 }
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.team-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--s1);
+  text-align: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.team-card:hover {
+  border-color: rgba(245,200,66,0.28);
+  background: var(--s2);
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.team-name {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.team-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.team-bio {
+  font-size: 14px;
+  color: var(--soft);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
