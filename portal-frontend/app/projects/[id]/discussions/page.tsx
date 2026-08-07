@@ -43,12 +43,10 @@ export default function DiscussionsPage() {
   if (loading) return <div className="p-8">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow">
+    <div className="min-h-screen bg-light">
+      <nav>
         <div className="max-w-7xl mx-auto px-8 py-4">
-          <Link href={`/projects/${projectId}`} className="text-blue-600 hover:text-blue-800">
-            ← Back to Project
-          </Link>
+          <Link href={`/projects/${projectId}`}>← Back to Project</Link>
         </div>
       </nav>
 
@@ -56,14 +54,14 @@ export default function DiscussionsPage() {
         <h2 className="text-3xl font-bold mb-8">Discussions</h2>
 
         {discussions.length === 0 ? (
-          <p className="text-gray-600">No discussions yet</p>
+          <p className="text-muted">No discussions yet</p>
         ) : (
           <div className="space-y-2">
             {discussions.map((discussion) => (
               <Link key={discussion.id} href={`/discussions/${discussion.id}`}>
-                <div className="p-4 border border-gray-200 rounded hover:shadow-md cursor-pointer bg-white">
+                <div className="p-4 card cursor-pointer">
                   <h3 className="font-semibold">{discussion.title}</h3>
-                  <p className="text-sm text-gray-600">{discussion.message_count || 0} messages</p>
+                  <p className="text-sm text-muted">{discussion.message_count || 0} messages</p>
                 </div>
               </Link>
             ))}

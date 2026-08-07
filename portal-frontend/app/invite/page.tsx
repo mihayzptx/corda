@@ -90,7 +90,7 @@ export default function InvitePage() {
             />
           </div>
 
-          <button type="submit" disabled={loading} className="w-full bg-yellow-500 text-white py-2 rounded font-medium hover:bg-yellow-600 disabled:opacity-50">
+          <button type="submit" disabled={loading} className="btn-primary w-full">
             {loading ? 'Creating Account...' : 'Accept Invitation'}
           </button>
         </form>

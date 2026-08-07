@@ -71,23 +71,21 @@ export default function DiscussionPage() {
   if (!discussion) return <div className="p-8">Discussion not found</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow">
+    <div className="min-h-screen bg-light">
+      <nav>
         <div className="max-w-2xl mx-auto px-8 py-4">
-          <Link href={`/projects/${discussion.project_id}/discussions`} className="text-blue-600 hover:text-blue-800">
-            ← Back to Discussions
-          </Link>
+          <Link href={`/projects/${discussion.project_id}/discussions`}>← Back to Discussions</Link>
         </div>
       </nav>
 
       <div className="max-w-2xl mx-auto px-8 py-8">
         <h1 className="text-3xl font-bold mb-6">{discussion.title}</h1>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+        <div className="card p-6 mb-6">
           <div className="space-y-4 max-h-96 overflow-y-auto mb-6">
             {(discussion.messages || []).map((msg) => (
-              <div key={msg.id} className="p-3 bg-gray-50 rounded">
-                <p className="text-sm text-gray-600">{new Date(msg.created_at).toLocaleString()}</p>
+              <div key={msg.id} className="p-3 bg-lighter rounded">
+                <p className="text-sm text-muted">{new Date(msg.created_at).toLocaleString()}</p>
                 <p className="mt-1">{msg.content}</p>
               </div>
             ))}
@@ -98,13 +96,10 @@ export default function DiscussionPage() {
               value={messageContent}
               onChange={(e) => setMessageContent(e.target.value)}
               placeholder="Type your message..."
-              className="w-full px-3 py-2 border border-gray-300 rounded"
+              className="w-full px-3 py-2 border rounded"
               rows={3}
             />
-            <button
-              type="submit"
-              className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
-            >
+            <button type="submit" className="btn-primary">
               Send Message
             </button>
           </form>

@@ -2,6 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #0066cc;
+  --primary-dark: #0052a3;
+  --primary-light: #e6f0ff;
+  --secondary: #6b7280;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --bg-white: #ffffff;
+  --bg-light: #f9fafb;
+  --bg-lighter: #f3f4f6;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-4 py-2 rounded font-medium transition-colors;
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg border transition-shadow;
+  border-color: var(--border-light);
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Status badge colors */
+.badge-discovery {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-development {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.badge-qa {
+  background-color: #fed7aa;
+  color: #92400e;
+}
+
+.badge-delivery {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-complete {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: var(--primary);
+  border-radius: 9999px;
+}
+
+.progress-bar-bg {
+  background-color: var(--bg-lighter);
+}
+
+/* Input styles */
+input, textarea, select {
+  border-color: var(--border-light);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Link styles */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Message/notification styles */
+.alert-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.alert-success {
+  background-color: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
 }
