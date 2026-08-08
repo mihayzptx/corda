@@ -2104,9 +2104,90 @@ footer {
   color: var(--muted);
 }
 
+/* ── COMPARISON SECTION ── */
+.comparison-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 52px;
+}
+
+.comp-title {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.comp-intro {
+  font-size: 16px;
+  color: var(--soft);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.comp-col {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.comp-col-header {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comp-col-header.gold {
+  color: var(--gold);
+}
+
+.comp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comp-list li {
+  font-size: 14px;
+  color: var(--soft);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.comp-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 @media (max-width: 1024px) {
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-section {
+    padding: 0 32px;
   }
 }
 
