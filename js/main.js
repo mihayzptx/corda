@@ -2,7 +2,7 @@
    CORDA Studio — main.js
    ───────────────────────────────────────── */
 
-const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORM_ENDPOINT = 'https://formspree.io/f/xgawooyd';
 
 // ── SCROLL PROGRESS BAR
 (function () {
